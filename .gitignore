@@ -1,0 +1,9 @@
+/app/img/Thumbs.db
+/node_modules
+/dist
+/app/js/index.js
+/app/css/style.css
+/app/*.html
+/app/modules
+/.idea
+/debug.log
