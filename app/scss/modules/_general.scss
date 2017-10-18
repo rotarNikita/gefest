@@ -1,0 +1,26 @@
+body {
+	font-family: "Helvetica", sans-serif;
+	font-size: $XMLargeTextSize;
+	font-weight: $mainTypoColor;
+	margin: 0;
+}
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+ul, li, ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: $mainTypoColor;
+	text-decoration: none;
+}
+/* general colors
+ ==========================================================================
+ */
+$backgroundColorNo1: #fafafa;
+$backgroundColorNo2: #ffffff;
