@@ -1,0 +1,9 @@
+mixin button(text, tag)
+    - if (tag === 'button')
+        button.button&attributes(attributes)= text
+    - else if (tag === 'a')
+        a.button&attributes(attributes)= text
+    - else if (tag === 'input')
+        input(value=text).button&attributes(attributes)
+    - else
+        p not defined '#{tag}' tag in options

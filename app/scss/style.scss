@@ -54,8 +54,10 @@
   src: url("../fonts/HelveticaBlack/HelveticaBlack.eot") format("embedded-opentype"), url("../fonts/HelveticaBlack/HelveticaBlack.woff") format("woff"), url("../fonts/HelveticaBlack/HelveticaBlack.ttf") format("truetype");
 }
 
+@import '../libs/normalize-scss/normalize';
 @import '../libs/bootstrap/bootstrap_3.3.7';
+@import '../libs/slick-1.8.0/slick/slick.scss';
 @import 'modules/typo';
 @import 'modules/general';
-@import 'modules/home/index';
 @import 'modules/components/index';
+@import 'modules/home/index';

@@ -12,7 +12,6 @@
         $('header .header_nav_wrapper li').mouseover(function(){
             var thisLi = $(this);
             var offsetLeft = thisLi.position().left;
-            console.log(firstOffsetLeft, offsetLeft);
             var width = thisLi.outerWidth();
             hoverLine.css({left: offsetLeft + 'px', maxWidth: width + 'px'});
         });

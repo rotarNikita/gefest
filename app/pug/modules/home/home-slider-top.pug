@@ -1,0 +1,15 @@
+include ../components/button
+
+.home_slider-top
+    .container.home_slider-top_label
+        .label
+            include home-slider-top-label.svg
+    .home_slider-top_slider
+        each val in [1, 2, 3, 4, 5, 6]
+            .home_slider-top_slide
+                .home_slider-top_content
+                    p.address УЛ ПЕДАГОГИЧЕСКАЯ, 23 ОДЕССА
+                    h3.jk ЖК «ЛИМНОС»
+                    +button('Связаться с нами', 'button')(class='home_slider-top_button')
+                .home_slider-top_background
+                    img(src='img/home/slider-top/slider-top-background.png')

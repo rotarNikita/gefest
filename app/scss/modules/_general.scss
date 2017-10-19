@@ -1,3 +1,7 @@
+$backgroundColorNo1: #fafafa;
+$backgroundColorNo2: #ffffff;
+$mainColorNo1: #cd202c;
+
 body {
 	font-family: "Helvetica", sans-serif;
 	font-size: $XMLargeTextSize;
@@ -19,8 +23,78 @@ a {
 	color: $mainTypoColor;
 	text-decoration: none;
 }
-/* general colors
- ==========================================================================
- */
-$backgroundColorNo1: #fafafa;
-$backgroundColorNo2: #ffffff;
+
+// slick custom
+.slick-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+	width: 60px;
+	height: 60px;
+	color: transparent;
+	overflow: hidden;
+	background-color: transparent;
+	border: 1px solid #fff;
+	transition: all .3s;
+	outline: none;
+	&:after {
+		position: absolute;
+		color: #fff;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0.7, 1.6);
+		height: 30px;
+	}
+	&:hover {
+		background-color: $mainColorNo1;
+		border-color: $mainColorNo1;
+	}
+}
+
+.slick-next {
+	right: 4%;
+	&:after {
+		content: '>';
+	}
+}
+
+.slick-prev {
+	left: 4%;
+	&:after {
+		content: '<';
+	}
+}
+
+.slick-slide {
+	outline: none;
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	li {
+		height: 15px;
+		width: 15px;
+		display: inline-block;
+		margin: 0 5px;
+		&.slick-active {
+			button {
+				border-color: $mainColorNo1;
+				background-color: $mainColorNo1;
+			}
+		}
+	}
+	button {
+		color: transparent;
+		overflow: hidden;
+		outline: none;
+		height: 15px;
+		width: 15px;
+		border: 2px solid #fff;
+		background-color: transparent;
+	}
+}
+
