@@ -1,0 +1,49 @@
+.home_project {
+  background: url("../img/home/project/background.png") no-repeat 50% 50%;
+  background-size: cover;
+  transition: background .5s;
+  &_title {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+    color: #fff;
+    margin-top: 0;
+  }
+  &_left {
+    width: 50%;
+    background-color: rgba($mainColorNo1, .5);
+    padding: 70px;
+  }
+  &_slide {
+    p {
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.2;
+    }
+  }
+  &_button {
+    margin-top: 40px;
+    background-color: transparent;
+    border: 2px solid #fff;
+  }
+  .slick-next {
+    top: unset;
+    left: unset;
+    right: 0;
+    bottom: -30px;
+  }
+  .slick-prev {
+    top: unset;
+    right: 100px;
+    bottom: -30px;
+    left: unset;
+  }
+  .slick-arrow:hover {
+    background-color: #fff;
+    border-color: #fff;
+    &:after {
+      color: $mainColorNo1;
+    }
+  }
+}
