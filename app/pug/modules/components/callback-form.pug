@@ -1,0 +1,12 @@
+include button
+
+.callback-form#callback-form
+    form
+        .row
+            .col-md-6.col-sm-6.col-xs-12
+                input.callback-form_input(type='text' name='name' placeholder='ФИО' )
+                input.callback-form_input(type='tel' name='phone' placeholder='Номер телефона')
+                input.callback-form_input(type='email' name='email' placeholder='E-mail')
+            .col-md-6.col-sm-6.col-xs-12
+                textarea(placeholder='Комментарий' name='comment').callback-form_input.big
+        +button('связаться с нами', 'input')(type='submit' class='callback-form_button')

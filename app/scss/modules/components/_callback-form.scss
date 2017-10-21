@@ -1,0 +1,43 @@
+.callback-form {
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: rgba(#fff, 0.9);
+  text-align: center;
+  padding: 70px;
+  width: 80%;
+  max-width: 980px;
+  &_input {
+    height: 50px;
+    border-radius: 24px;
+    border: 2px solid #000;
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+    color: #000;
+    outline: none;
+    margin-bottom: 15px;
+    &::placeholder {
+      font-size: 22px;
+      color: #000;
+    }
+    &.big {
+      height: 180px;
+      text-align: left;
+      resize: none;
+      padding: 10px 20px;
+    }
+  }
+  &_button {
+    margin-top: 40px;
+    &:hover {
+      background-color: lighten($mainColorNo1, 10%);
+      color: #fff;
+    }
+  }
+}

@@ -10,6 +10,7 @@ section.home_slider-top
                 .home_slider-top_content
                     p.address УЛ ПЕДАГОГИЧЕСКАЯ, 23 ОДЕССА
                     h3.jk ЖК «ЛИМНОС»
-                    +button('Связаться с нами', 'button')(class='home_slider-top_button')
+                    +button('Связаться с нами', 'button')(class='home_slider-top_button popup-caller' data-target='callback-form')
                 .home_slider-top_background
                     img(src='img/home/slider-top/slider-top-background.png')
+    include ../components/callback-form

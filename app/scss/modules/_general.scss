@@ -7,6 +7,7 @@ body {
 	font-size: $XMLargeTextSize;
 	font-weight: 300;
 	margin: 0;
+	position: relative;
 }
 
 *, *:after, *:before {
@@ -97,5 +98,18 @@ a {
 		border: 2px solid #fff;
 		background-color: transparent;
 	}
+}
+
+// popup blackout
+.popup-blackout {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100vw;
+	height: 100vh;
+	z-index: 999;
+	background-color: rgba(#000, .5);
+	display: none;
 }
 
