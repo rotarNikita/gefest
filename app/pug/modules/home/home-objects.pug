@@ -1,0 +1,17 @@
+section.home_objects
+    .container
+        h2.title Объекты
+        .home_objects_slider
+            each val in [1, 2, 3]
+                .home_objects_slide
+                    .row.col-eq-height
+                        each val in [1, 2, 3, 4, 5, 6]
+                            .col-md-4
+                                .home_objects_item(style='background-image: url(img/home/objects/object' + val + '.png)')
+                                    .home_objects_item_description
+                                        .address
+                                            span ул. Генуэзская,1 Одесса
+                                        .name ЖК «РОДОС»
+                                        .price от 21 990 грн/м²
+                                        a.details(href='#') Подробнее
+                                    .home_objects_item_label В продаже

@@ -22,3 +22,18 @@ $mainTypoColor: #000000;
 $typoColorNo2:  #343538;
 $highlightTypoColor: #e60000;
 $lightTypoColor: #adb3bc;
+
+.title {
+  color: #000;
+  font-size: 36px;
+  line-height: 1.2;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+    background-color: $mainColorNo1;
+    margin-left: 60px;
+  }
+}

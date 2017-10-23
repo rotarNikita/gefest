@@ -1,4 +1,5 @@
 +function() {
+    // home slider top
     var homeSliderTop = $('.home_slider-top_slider');
 
     if (homeSliderTop.length) {
@@ -8,6 +9,7 @@
         })
     }
 
+    // slider social projects
     var homeProjectSlider = $('.home_project_slider');
 
     if (homeProjectSlider.length) {
@@ -22,5 +24,14 @@
 
             homeProject.style.backgroundImage = 'url(' + imageSrc + ')'
         });
+    }
+
+    // objects slider
+    var homeObjectsSlider = $('.home_objects_slider')
+
+    if (homeObjectsSlider.length) {
+        homeObjectsSlider.slick({
+            adaptiveHeight: true
+        })
     }
 }();

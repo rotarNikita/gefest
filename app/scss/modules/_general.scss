@@ -4,7 +4,7 @@ $mainColorNo1: #cd202c;
 
 body {
 	font-family: "Helvetica", sans-serif;
-	font-size: $XMLargeTextSize;
+	font-size: 24px;
 	font-weight: 300;
 	margin: 0;
 	position: relative;
@@ -21,7 +21,7 @@ ul, li, ol {
 }
 
 a {
-	color: $mainTypoColor;
+	color: #000;
 	text-decoration: none;
 }
 
@@ -111,5 +111,11 @@ a {
 	z-index: 999;
 	background-color: rgba(#000, .5);
 	display: none;
+}
+
+// helpers
+.col-eq-height {
+	display: flex;
+	flex-wrap: wrap;
 }
 

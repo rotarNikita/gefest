@@ -1,0 +1,125 @@
+.home_objects {
+  &_slide {
+    margin: 0 15px;
+  }
+  &_slider {
+    margin: 0 -15px;
+  }
+  &_item {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin: 15px 0;
+    &_description {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(#fff, .8);
+      padding-bottom: 10px;
+      transition: all .3s;
+      .address {
+        font-size: 18px;
+        color: #000;
+        line-height: 1.2;
+        text-align: center;
+        height: 60px;
+        border-bottom: 2px solid rgba(208, 208, 208, 0.8);
+        background: url("../img/home/objects/location-icon.png") no-repeat 10px 50%;
+        padding: 0 40px;
+        span {
+          vertical-align: middle;
+          display: inline-block;
+          transition: all .3s;
+        }
+        &:after {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
+      }
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: center;
+        margin: 15px 0;
+      }
+      .price {
+        font-size: 18px;
+        font-weight: 500;
+        padding-left: 5%;
+        float: left;
+      }
+      .details {
+        font-size: 18px;
+        font-weight: 500;
+        padding-right: 5%;
+        float: right;
+        text-transform: lowercase;
+        transition: all .3s;
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 30px;
+          height: 2px;
+          background-color: #000;
+          margin-bottom: 3px;
+          margin-left: 10px;
+          transition: all .3s;
+        }
+        &:hover {
+          &:after {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    &:hover {
+      .home_objects_item_description {
+        background-color: rgba(#000, .8);
+        color: #fff;
+        .address span {
+          color: #fff;
+        }
+        .details {
+          color: #fff;
+          &:after {
+            background-color: $mainColorNo1;
+          }
+        }
+      }
+    }
+    &_label {
+      background: url("../img/home/objects/label.png") no-repeat 100% 50%;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      top: 30px;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 20px 50px 20px 30px;
+    }
+  }
+  .slick-prev {
+    left: -80px;
+  }
+  .slick-next {
+    right: -80px;
+  }
+  .slick-arrow {
+    border-color: $mainColorNo1;
+    &:after {
+      color: $mainColorNo1;
+    }
+    &:hover {
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+}
