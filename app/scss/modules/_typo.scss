@@ -27,6 +27,7 @@ $lightTypoColor: #adb3bc;
   color: #000;
   font-size: 36px;
   line-height: 1.2;
+  margin: 50px 0;
   &:before {
     content: '';
     display: inline-block;
@@ -34,6 +35,5 @@ $lightTypoColor: #adb3bc;
     height: 25px;
     margin-right: 20px;
     background-color: $mainColorNo1;
-    margin-left: 60px;
   }
 }

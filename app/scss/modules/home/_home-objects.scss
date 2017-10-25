@@ -54,7 +54,7 @@
         padding-left: 5%;
         float: left;
       }
-      .details {
+      &_details {
         font-size: 18px;
         font-weight: 500;
         padding-right: 5%;
@@ -85,7 +85,7 @@
         .address span {
           color: #fff;
         }
-        .details {
+        &_details {
           color: #fff;
           &:after {
             background-color: $mainColorNo1;

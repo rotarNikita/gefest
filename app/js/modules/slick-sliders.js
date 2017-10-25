@@ -34,4 +34,15 @@
             adaptiveHeight: true
         })
     }
+
+    // home news slider
+    var homeNewsSlider = $('.home_news_slider');
+
+    if (homeNewsSlider) {
+        homeNewsSlider.slick({
+            rows: 2,
+            slidesPerRow: 2,
+            adaptiveHeight: true
+        })
+    }
 }();
