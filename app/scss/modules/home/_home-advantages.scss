@@ -1,0 +1,124 @@
+$homeAdvantagesBackgroundLayer: rgba(#e3e3e3, 0.9);
+
+.home_advantages {
+  background: url("../img/home/advantages/background.jpg") no-repeat 50% 50%;
+  background-size: cover;
+  overflow: hidden;
+  .title {
+    position: relative;
+    z-index: 1;
+  }
+  &_round {
+    width: 33.33%;
+    margin: 50px auto 100px auto;
+    border-radius: 50%;
+    box-shadow: 0 0 0 100vw $homeAdvantagesBackgroundLayer/*, inset 0 0 0 1px $homeAdvantagesBackgroundLayer*/;
+    position: relative;
+    .logo {
+      display: block;
+      max-width: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .item {
+      position: absolute;
+      white-space: nowrap;
+      &.top-left {
+        right: 90%;
+        top: 0;
+        transform: translateX(100px);
+      }
+      &.bottom-left {
+        right: 90%;
+        bottom: -5px;
+        transform: translateX(100px);
+      }
+      &.top-right {
+        left: 90%;
+        top: 0;
+        transform: translateX(-100px);
+      }
+      &.bottom-right {
+        left: 90%;
+        bottom: -5px;
+        transform: translateX(-100px);
+      }
+      &_round {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        text-align: center;
+        &_inner {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-weight: bold;
+          &_number {
+            font-size: 55px;
+            color: rgba(0, 0, 0, 0.851);
+            &.small {
+              font-size: 32px;
+            }
+          }
+        }
+        circle {
+          transform: rotate(-45deg);
+          transform-origin: center;
+        }
+
+      }
+      &_content {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: right;
+        font-size: 15px;
+        line-height: 1.25;
+        text-transform: uppercase;
+        font-weight: bold;
+        .red {
+          color: $mainColorNo1;
+        }
+        &.left {
+          text-align: left;
+        }
+      }
+    }
+    &_custom {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+      .background-for-item {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: $homeAdvantagesBackgroundLayer;
+        &:nth-child(1) {
+          right: 90%;
+          top: 0;
+          transform: translateX(50%);
+        }
+        &:nth-child(2) {
+          right: 90%;
+          bottom: 0;
+          transform: translateX(50%);
+        }
+        &:nth-child(3) {
+          left: 90%;
+          top: 0;
+          transform: translateX(-50%);
+        }
+        &:nth-child(4) {
+          left: 90%;
+          bottom: 0;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}
