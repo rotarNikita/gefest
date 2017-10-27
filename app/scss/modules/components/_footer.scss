@@ -1,0 +1,178 @@
+.footer {
+  &_map {
+    position: relative;
+    &_contacts {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40%;
+      background-color: rgba(#ecebeb, .8);
+      padding: 30px 5%;
+      .block-title {
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+      &_subtitle {
+        font-size: 24px;
+        line-height: 1.2;
+        display: inline-block;
+        border-bottom: 1px dashed;
+        margin-bottom: 20px;
+      }
+      &_address, &_mail {
+        font-size: 18px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        &:before {
+          content: '';
+          display: inline-block;
+          background: url("../img/home/objects/location-icon.png") no-repeat 0 50%;
+          background-size: contain;
+          width: 30px;
+          height: 20px;
+          position: relative;
+          top: 4px;
+        }
+      }
+      &_phone {
+        font-size: 18px;
+        color: $mainColorNo1;
+        font-weight: bold;
+        line-height: 1.2;
+        padding: 15px 30px 15px 70px;
+        border: 2px solid $mainColorNo1;
+        display: inline-block;
+        border-radius: 28px;
+        background: url("../img/components/header/phone_icon.png") no-repeat 30px 50%;
+        margin-bottom: 40px;
+        background-size: 21px;
+      }
+      &_text {
+        font-size: 22px;
+        line-height: 1.2;
+      }
+      &_mail {
+        display: inline-block;
+        margin-top: 40px;
+        transition: all .3s;
+        &:hover {
+          color: lighten(#000, 30%);
+        }
+        &:before {
+          background-image: url("../img/components/footer/mail.png");
+          background-size: 20px;
+          top: 5px;
+        }
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        transform: translateY(-50%);
+        border-right: 40px solid rgba(#ecebeb, .8);
+        border-top: 35px solid transparent;
+        border-bottom: 35px solid transparent;
+      }
+    }
+  }
+  .slick-prev {
+    margin-right: 20px;
+  }
+  .slick-next {
+  }
+  .slick-arrow {
+    position: relative;
+    border-color: $mainColorNo1;
+    top: unset;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    display: inline-block;
+    transform: none;
+    cursor: pointer;
+    margin-top: 40px;
+    &:after {
+      color: $mainColorNo1;
+    }
+    &:hover {
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+  &_after {
+    position: relative;
+    padding: 50px 0;
+    background: url("../img/components/header/header_background.png");
+    background-size: cover;
+    &_container {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:after, &:before {
+        content: none;
+      }
+    }
+    &_copyright {
+      font-size: 13px;
+      color: rgb(52, 53, 56);
+      line-height: 1.5;
+    }
+    &_logo {
+      img {
+        max-width: 280px;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: rgba(#fff, .8);
+    }
+    &_socials {
+      margin: 0 -5px;
+      &_item {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        background: url("../img/components/footer/socials-sprite.png") no-repeat 7px 50%;
+        background-size: cover;
+        margin: 0 5px;
+        opacity: 0.45;
+        transition: opacity .3s;
+        &.tw {
+          background-position: -38px 50%;
+        }
+        &.ig {
+          background-position: -86px 50%;
+        }
+        &.vk {
+          background-position: -129px 50%;
+          width: 30px;
+        }
+        &.pi {
+          background-position: -176px 50%;
+        }
+        &.in {
+          background-position: -225px 50%;
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#footer-map {
+  height: 600px;
+  .gmnoprint {
+    display: none;
+  }
+}

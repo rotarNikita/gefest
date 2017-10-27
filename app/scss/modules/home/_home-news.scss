@@ -10,6 +10,10 @@
       img {
         width: 100%;
         display: block;
+        transition: all .5s;
+        &:hover {
+          transform: scale(1.2, 1.2);
+        }
       }
     }
     &_title {
@@ -17,6 +21,7 @@
       line-height: 1.2;
       height: 38px;
       overflow: hidden;
+      text-transform: uppercase;
     }
     &_date {
       font-size: 14px;
@@ -24,6 +29,7 @@
     }
     .home_objects_item_description_details {
       margin-top: 30px;
+      text-transform: lowercase;
       &:after {
         content: none;
       }
