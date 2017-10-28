@@ -26,12 +26,14 @@
         });
     }
 
-    // objects slider
+    // home objects slider
     var homeObjectsSlider = $('.home_objects_slider');
 
     if (homeObjectsSlider.length) {
         homeObjectsSlider.slick({
-            adaptiveHeight: true
+            adaptiveHeight: true,
+            rows: 2,
+            slidesPerRow: 3
         })
     }
 
@@ -56,4 +58,6 @@
             prevArrow: $('.footer_map_contacts .slick-arrow.slick-prev')
         })
     }
+
+    // object page slider
 }();

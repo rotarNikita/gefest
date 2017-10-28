@@ -1,0 +1,48 @@
+.objects_slider {
+  &_item_description {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #fff;
+    height: 254px;
+    max-height: 0;
+    transition: all .3s;
+    opacity: 0;
+    overflow: hidden;
+    img {
+      max-width: 55px;
+      padding-bottom: 10px;
+      padding-top: 110px;
+    }
+  }
+  .home_objects {
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    max-width: 1300px;
+  }
+  .home_objects_item_description .price {
+    font-size: 16px;
+  }
+  .home_objects_item_description_details {
+    font-size: 16px;
+  }
+  .home_objects_item_description .address {
+    transition: all .3s;
+  }
+  .home_objects_item {
+    margin: 15px 0;
+    &:hover {
+      .objects_slider_item_description {
+        max-height: 254px;
+        opacity: 1;
+      }
+      .home_objects_item_description .address {
+        background: transparent;
+        span {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

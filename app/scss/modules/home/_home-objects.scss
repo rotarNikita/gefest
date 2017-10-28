@@ -11,7 +11,7 @@
     height: 400px;
     background-size: cover;
     background-position: 50% 50%;
-    margin: 15px 0;
+    margin: 15px;
     &_description {
       position: absolute;
       bottom: 0;
@@ -104,6 +104,9 @@
       text-transform: uppercase;
       color: #fff;
       padding: 20px 50px 20px 30px;
+      &.realize {
+        padding: 20px 30px 20px 10px;
+      }
     }
   }
   .slick-prev {

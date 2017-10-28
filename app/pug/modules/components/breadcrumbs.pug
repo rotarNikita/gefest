@@ -1,0 +1,5 @@
+mixin breadcrumbs(...links)
+    ul.breadcrumbs
+        each link in links
+            li
+                a(href='#')= link

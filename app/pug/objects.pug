@@ -1,0 +1,11 @@
+include modules/components/breadcrumbs
+
+doctype html
+html(lang='en')
+    include modules/components/head
+    body
+        include modules/components/header
+        main.objects
+            +breadcrumbs('Главная', 'Объекты')
+            include modules/objects/objects-slider
+        include modules/components/footer

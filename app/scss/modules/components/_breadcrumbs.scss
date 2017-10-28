@@ -1,0 +1,29 @@
+.breadcrumbs {
+  text-align: center;
+  margin-top: 50px;
+  li {
+    display: inline-block;
+
+    &:not(:last-of-type):after {
+      content: '>';
+      display: inline-block;
+      padding-left: 10px;
+      padding-right: 5px;
+      font-size: 10px;
+      color: #adb3bc;
+      vertical-align: middle;
+    }
+    &:last-of-type {
+      a { color: #000; }
+    }
+  }
+  a {
+    font-size: 14px;
+    color: #adb3bc;
+    line-height: 1.2;
+    vertical-align: middle;
+    &:hover {
+      color: #000;
+    }
+  }
+}
