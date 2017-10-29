@@ -1,55 +1,41 @@
 section.home_advantages
-    .container
-        h2.block-title Наши преимущества
-    .home_advantages_round
-        img.logo(src='img/home/advantages/logo.png' alt='')
-        .home_advantages_round_custom
-            .background-for-item
-            .background-for-item
-            .background-for-item
-            .background-for-item
-        .item.top-left
-            .item_content
-                span.red 20 лет
-                |  на
+    .home_advantages_title
+        .container
+            h2.block-title Наши преимущества
+    .home_advantages_content
+        include home-advantages-round.svg
+        .home_advantages_item.left
+            .home_advantages_item_out-of-round
+                | <span class="red">20 лет</span> на
                 br
                 | рынке Украины
-            .item_round
-                include home-advantages-border.svg
-                .item_round_inner
-                    .item_round_inner_number 20
-                    .item_round_inner_description лет
-        .item.bottom-left
-            .item_content
-                span.red 475 000 м2
-                |  возводится
+            .home_advantages_item_in-round
+                .number 20
+                .text лет
+        .home_advantages_item.left
+            .home_advantages_item_out-of-round
+                | <span class="red">475 000 м2</span> возводится
                 br
                 | в новых зданиях
-            .item_round
-                include home-advantages-border.svg
-                .item_round_inner
-                    .item_round_inner_number.small 475 000
-                    .item_round_inner_description м2
-        .item.top-right
-            .item_round
-                include home-advantages-border.svg
-                .item_round_inner
-                    .item_round_inner_number 12
-                    .item_round_inner_description обьектов
-            .item_content.left
-                span.red 12 крупных объектов
+            .home_advantages_item_in-round
+                .number.small 475 000
+                .text м2
+        .home_advantages_item.right
+            .home_advantages_item_in-round
+                .number 12
+                .text объектов
+            .home_advantages_item_out-of-round
+                | <span class="red">12 крупных объектов</span>
                 br
                 | сданы в эксплуатацию
                 br
                 | за последние 11 лет
-        .item.bottom-right
-            .item_round
-                include home-advantages-border.svg
-                .item_round_inner
-                    .item_round_inner_number 6
-                    .item_round_inner_description ЖК
-            .item_content.left
-                span.red 6 крупных ЖК
+        .home_advantages_item.right
+            .home_advantages_item_in-round
+                .number 6
+                .text жк
+            .home_advantages_item_out-of-round
+                | <span class="red">6 крупных ЖК</span>
                 br
                 | будут сданы в эксплуатацию
                 br

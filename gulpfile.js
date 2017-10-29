@@ -21,9 +21,10 @@ gulp.task('sass', function() {
 
 gulp.task('script', function() {
 	return gulp.src([
-		'./app/libs/jquery-3.2.1.min.js',
-		'./app/libs/slick-1.8.0/slick/slick.min.js',
-		'./app/js/modules/**/*.js'
+			'./app/libs/jquery-3.2.1.min.js',
+			'./app/libs/slick-1.8.0/slick/slick.min.js',
+			'./app/libs/N.js',
+			'./app/js/modules/**/*.js'
 		])
 	.pipe(concat('index.js', {newLine: '\r\n;'}))
 	.pipe(gulp.dest('./app/js'))

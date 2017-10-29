@@ -1,0 +1,36 @@
+<svg class="home_advantages_mask" version="1.0" xmlns="http://www.w3.org/2000/svg"
+     width="100%" height="600px" viewBox="0 0 100 100"
+     preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <mask id="round-mask" maskUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="100" height="100" fill="#fff" />
+
+            <circle class="home_advantages_main-circle" r="16.66" cx="50" cy="50" fill="#000" />
+
+            <circle class="home_advantages_small-circle" r="6" cx="38" cy="40" fill="#fff" />
+            <circle class="home_advantages_small-circle" r="6" cx="38" cy="60" fill="#fff" />
+            <circle class="home_advantages_small-circle" r="6" cx="62" cy="40" fill="#fff" />
+            <circle class="home_advantages_small-circle" r="6" cx="62" cy="60" fill="#fff" />
+        </mask>
+
+        <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#c43e51" stop-opacity="0.98824" />
+            <stop offset="100%" stop-color="#2153d3" stop-opacity="0.96863" />
+        </linearGradient>
+    </defs>
+
+    <g mask="url(#round-mask)">
+        <rect class="home_advantages_mask_rect" x="0" y="0" width="100" height="100" />
+    </g>
+
+    <g>
+        <circle class="home_advantages_gradient-circle" r="6" cx="38" cy="40" fill="transparent" stroke="url(#border-gradient)" stroke-width="1"/>
+        <circle class="home_advantages_gradient-circle" r="6" cx="38" cy="60" fill="transparent" stroke="url(#border-gradient)" stroke-width="1"/>
+        <circle class="home_advantages_gradient-circle" r="6" cx="62" cy="40" fill="transparent" stroke="url(#border-gradient)" stroke-width="1"/>
+        <circle class="home_advantages_gradient-circle" r="6" cx="62" cy="60" fill="transparent" stroke="url(#border-gradient)" stroke-width="1"/>
+    </g>
+
+    <g>
+        <image xlink:href="img/home/advantages/logo.png" x="44.45" y="44.45" height="11.1" width="11.1" />
+    </g>
+</svg>
