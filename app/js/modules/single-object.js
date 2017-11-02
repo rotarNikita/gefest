@@ -2,6 +2,7 @@
     var objectPage = document.querySelector('.single-object');
 
     if (objectPage) {
+        // aside list
         var aside = objectPage.querySelector('.single-object_aside');
 
         var navItems = aside.querySelectorAll('.single-object_aside_li'),
@@ -93,16 +94,21 @@
         }
 
         // aside scroll
-        var maxTop = document.querySelector('.header').offsetHeight,
-            maxBottom = N.offset(document.querySelector('.footer_after')).top,
+        var maxTop, maxBottom, bottom;
+
+        asideVariablesInit();
+        window.addEventListener('load', asideVariablesInit);
+
+        asideScroll();
+        window.addEventListener('scroll', asideScroll);
+
+        function asideVariablesInit () {
+            maxTop = document.querySelector('.header').offsetHeight;
+            maxBottom = N.offset(document.querySelector('.footer_after')).top;
             bottom = document.querySelector('.footer_after').offsetHeight;
 
-        window.addEventListener('load', function () {
-            maxBottom = N.offset(document.querySelector('.footer_after')).top;
             asideScroll();
-        });
-
-        window.addEventListener('scroll', asideScroll);
+        }
 
         function asideScroll () {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
