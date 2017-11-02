@@ -1,0 +1,14 @@
+$objectMain: #001339;
+$asideWidthClose: 30px;
+
+.single-object {
+  &_container {
+    padding-left: $asideWidthClose;
+  }
+  & + .footer .footer_map {
+    margin-left: $asideWidthClose;
+  }
+}
+
+@import "single-object-aside";
+@import "single-object-slider";

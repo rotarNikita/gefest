@@ -1,0 +1,94 @@
+$objectAnchor: rgb(250, 244, 175);
+$asideWidth: 400px;
+
+.single-object_aside {
+  width: $asideWidth;
+  height: 100vh;
+  max-width: $asideWidthClose;
+  overflow: hidden;
+  background: no-repeat 50% 50%;
+  transition: max-width 1s;
+  position: absolute;
+  top: 283px;
+  z-index: 10;
+  &_nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .line {
+      position: absolute;
+      left: 5px;
+      width: 1px;
+      background-color: $objectAnchor;
+    }
+  }
+  &_ul {
+    max-width: 12px;
+    overflow: hidden;
+    transition: max-width 1s;
+  }
+  &_li {
+    margin: 10px 0;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+    transition: all .3s;
+    .square {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      margin-right: 30px;
+      transition: all .3s;
+    }
+    &:hover, &.active {
+      color: $objectAnchor;
+      .square {
+        background-color: $objectAnchor;
+      }
+    }
+    &.active {
+      .square {
+        transition: all .6s;
+        transform: scale(0.7, 0.7);
+      }
+    }
+  }
+  &_anchor {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: bold;
+    color: inherit;
+  }
+  &.fixed {
+    position: fixed;
+    left: 0!important;
+    top: 0!important;
+  }
+  &.bottom {
+    position: absolute;
+    left: 0;
+    top: unset!important;
+  }
+  &.top {
+    position: absolute;
+    left: 0;
+    bottom: unset!important;
+  }
+  &:hover {
+    max-width: $asideWidth;
+    .single-object_aside_ul {
+      max-width: $asideWidth;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba($objectMain, 0.85);
+  }
+}

@@ -60,4 +60,18 @@
     }
 
     // object page slider
+    var objectPageSlider = $('.single-object_slider_slides');
+
+    if (objectPageSlider) {
+        objectPageSlider.slick({
+            adaptiveHeight: true
+        });
+
+        var zoomLink = $('.single-object_slider_zoom');
+
+        zoomLink.attr('href', $('.single-object_slider_slide[data-slick-index=' + 0 + '] img').attr('src'));
+        objectPageSlider.on('afterChange', function (event, slick, currentSlide) {
+            zoomLink.attr('href', $('.single-object_slider_slide[data-slick-index=' + currentSlide + '] img').attr('src'))
+        });
+    }
 }();

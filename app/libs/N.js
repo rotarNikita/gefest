@@ -40,7 +40,9 @@
     N.animate = function (options) {
         var duration = options.duration || 300,
             timing = options.timing || function (timeFraction) { return timeFraction },
-            start = performance.now();
+            callback = options.callback || function () {},
+            start = performance.now(),
+            stopImmediate = false;
 
         requestAnimationFrame(function animate(time) {
             var timeFraction = (time - start) / duration;
@@ -50,10 +52,18 @@
 
             options.do(progress);
 
-            if (timeFraction < 1) {
+            if (timeFraction < 1 && !stopImmediate) {
                 requestAnimationFrame(animate);
+            } else if (!stopImmediate) {
+                callback();
             }
         });
+
+        function stopThisAnimate () {
+            stopImmediate = true;
+        }
+
+        return stopThisAnimate
     };
 
     function getOffsetSum(elem) {
