@@ -1,0 +1,52 @@
+<svg
+        class="single-object_description_map"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMinYMin slice">
+
+    <defs>
+        <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="100%" stop-color="#000"/>
+            <stop offset="200%" stop-color="#fff"/>
+        </linearGradient>
+
+        <mask id="mask-circle">
+            <circle cx="66.2" cy="30.65" r="20" fill="url(#gradient)" />
+        </mask>
+    </defs>
+
+    <image
+            id="single-object-description-map"
+            xlink:href=""
+            x="0"
+            y="0"
+            height="100"
+            width="100" />
+
+    <path
+            id="single-object-description-map-path"
+            d="M26.2,60.65 h40 v-10"
+            fill="none"
+            stroke-width="1"
+            stroke="#000" />
+
+    <image
+            id="single-object-description-map-marker"
+            xlink:href="/img/single-object/map-marker.png"
+            x="22.6"
+            y="55.3"
+            height="10.7"
+            width="7.2" />
+
+    <g mask="url(#mask-circle)">
+        <image
+                class="single-object_description_map_preview"
+                xlink:href="/img/single-object/object-description-preview.jpg"
+                x="66.2"
+                y="30.65"
+                height="40"
+                width="100"
+                transform="translate(-50, -20)" />
+    </g>
+</svg>

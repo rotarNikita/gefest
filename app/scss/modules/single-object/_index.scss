@@ -8,6 +8,11 @@ $asideWidthClose: 30px;
   & + .footer .footer_map {
     margin-left: $asideWidthClose;
   }
+  .block-title {
+    &:before {
+      background-color: $objectMain;
+    }
+  }
 }
 
 @import "single-object-aside";

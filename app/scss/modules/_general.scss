@@ -47,8 +47,6 @@ a {
 		transform: translate(-50%, -50%) scale(0.7, 1.6);
 		transform-origin: 50% 50%;
 		transition: color .3s;
-		line-height: 0;
-		height: 2px;
 	}
 	&:hover {
 		background-color: $mainColorNo1;

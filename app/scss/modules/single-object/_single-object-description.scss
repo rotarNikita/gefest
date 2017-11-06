@@ -1,0 +1,27 @@
+.single-object_description {
+  display: flex;
+  &_content {
+    width: 50%;
+    padding: 100px 5%;
+  }
+  &_address {
+    background: url("../img/single-object/description-adress.png") no-repeat 0 50%;
+    background-size: contain;
+    padding: 5px 0;
+    padding-left: 60px;
+    margin-bottom: 50px;
+  }
+  &_map {
+    width: 50%;
+    display: block;
+  }
+
+}
+
+#single-object-description-map-path {
+  stroke: $objectMain;
+  &.active {
+    transition: all 1s linear;
+    stroke-dashoffset: 0!important;
+  }
+}

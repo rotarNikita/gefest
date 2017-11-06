@@ -127,5 +127,52 @@
                 aside.classList.add('bottom');
             }
         }
+
+        // description map
+        var imgMap = document.getElementById('single-object-description-map'),
+            mapPath = document.getElementById('single-object-description-map-path');
+
+        imgMap.setAttribute('xlink:href', 'https://maps.googleapis.com/maps/api/staticmap?center=46.441159,30.750322&zoom=16&size=' + 640 + 'x' + 640 + '&scale=2&maptype=roadmap' +
+            '&markers=46.439614,30.747054' +
+            '&key=AIzaSyAG8sutyHg4ISwG95Fg4iEOzvlkE6yecE8');
+
+        imgMapResize();
+        window.addEventListener('resize', imgMapResize);
+
+        var gradient = document.getElementById('gradient'),
+            stop1Offset = parseInt(gradient.children[0].getAttribute('offset')),
+            stop2Offset = parseInt(gradient.children[1].getAttribute('offset')),
+            path = document.getElementById('single-object-description-map-path'),
+            pathLength = path.getTotalLength();
+
+        path.style.strokeDasharray = pathLength;
+        path.style.strokeDashoffset = pathLength;
+
+        window.addEventListener('load', function () {
+            N.checkView({
+                offsetTop: 1,
+                element: document.getElementById('single-object-description-map-marker'),
+                callback: function () {
+                    path.classList.add('active');
+
+                    setTimeout(function () {
+                        N.animate({
+                            duration: 1000,
+                            timing: easeInOut,
+                            do: function (progress) {
+                                gradient.children[0].setAttribute('offset', stop1Offset - stop1Offset * progress + '%');
+                                gradient.children[1].setAttribute('offset', stop2Offset - stop2Offset * progress + '%');
+                            }
+                        })
+                    }, 1000)
+                }
+            })
+        });
+
+        function imgMapResize () {
+            mapPath.style.strokeWidth = 100 / imgMap.getBoundingClientRect().width;
+        }
+
+
     }
 }();

@@ -3,7 +3,7 @@ $asideWidth: 400px;
 
 .single-object_aside {
   width: $asideWidth;
-  height: 100vh;
+  height: calc(100vh + 1px);
   max-width: $asideWidthClose;
   overflow: hidden;
   background: no-repeat 50% 50%;
