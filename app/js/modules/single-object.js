@@ -173,6 +173,40 @@
             mapPath.style.strokeWidth = 100 / imgMap.getBoundingClientRect().width;
         }
 
+        // video
+        var videoWrapper = document.querySelector('.single-object_video_wrapper'),
+            video = videoWrapper.getElementsByTagName('video')[0],
+            playButton = videoWrapper.querySelector('.play-button');
 
+        if (video.readyState >= 4) videoLoaded();
+        else video.addEventListener('canplaythrough', videoLoaded);
+
+
+        function videoLoaded () {
+            playButton.addEventListener('mousedown', function () {
+                this.classList.add('mouse-down');
+            });
+
+            document.body.addEventListener('mouseup', function () {
+                playButton.classList.remove('mouse-down');
+            });
+
+            playButton.addEventListener('click', function (event) {
+                event.stopPropagation();
+
+                videoWrapper.classList.add('playing');
+                playButton.classList.remove('mouse-down');
+
+                video.play();
+            });
+
+            videoWrapper.addEventListener('click', function (event) {
+                this.classList.remove('playing');
+
+                video.pause();
+            });
+            
+            video.addEventListener('ended', videoWrapper.click.bind(videoWrapper));
+        }
     }
 }();
