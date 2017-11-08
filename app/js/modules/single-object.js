@@ -20,10 +20,12 @@
             navLine.style.bottom = navUlHeight - navLine.offsetTop + 'px';
         });
 
+        var scrollAnimationStop = function () {};
+
         Array.prototype.forEach.call(navItems, function (navItem) {
             // link in li
             var link = navItem.children[1],
-                linkTarget = link.attributes.href;
+                target = document.getElementById(link.attributes.href.value.slice(1));
 
             link.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -35,6 +37,18 @@
                 lineGoTo(this);
 
                 navItemsActive = this;
+
+                scrollAnimationStop();
+                var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop,
+                    targetOffset = N.offset(target).top;
+
+                scrollAnimationStop = N.animate({
+                    duration: 1000,
+                    timing: easeInOut,
+                    do: function (progress) {
+                        window.scrollTo(0, Math.round((currentScrollTop - currentScrollTop * progress) + targetOffset * progress));
+                    }
+                })
             });
         });
 
