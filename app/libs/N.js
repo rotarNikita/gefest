@@ -42,7 +42,8 @@
             timing = options.timing || function (timeFraction) { return timeFraction },
             callback = options.callback || function () {},
             start = performance.now(),
-            stopImmediate = false;
+            stopImmediate = false,
+            stopImmediateWithCallBack = false;
 
         requestAnimationFrame(function animate(time) {
             var timeFraction = (time - start) / duration;
@@ -54,13 +55,14 @@
 
             if (timeFraction < 1 && !stopImmediate) {
                 requestAnimationFrame(animate);
-            } else if (!stopImmediate) {
+            } else if (!stopImmediate || (stopImmediateWithCallBack && stopImmediate)) {
                 callback();
             }
         });
 
-        function stopThisAnimate () {
+        function stopThisAnimate (stopWithCallback) {
             stopImmediate = true;
+            stopImmediateWithCallBack = stopWithCallback;
         }
 
         return stopThisAnimate

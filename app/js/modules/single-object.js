@@ -20,12 +20,15 @@
             navLine.style.bottom = navUlHeight - navLine.offsetTop + 'px';
         });
 
-        var scrollAnimationStop = function () {};
+        var scrollAnimationStop = function () {},
+            targets = [];
 
         Array.prototype.forEach.call(navItems, function (navItem) {
             // link in li
             var link = navItem.children[1],
                 target = document.getElementById(link.attributes.href.value.slice(1));
+
+            targets.push(target);
 
             link.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -39,6 +42,7 @@
                 navItemsActive = this;
 
                 scrollAnimationStop();
+                window.removeEventListener('scroll', checkActiveLi);
                 var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop,
                     targetOffset = N.offset(target).top;
 
@@ -47,17 +51,46 @@
                     timing: easeInOut,
                     do: function (progress) {
                         window.scrollTo(0, Math.round((currentScrollTop - currentScrollTop * progress) + targetOffset * progress));
+                    },
+                    callback: function () {
+                        window.addEventListener('scroll', checkActiveLi);
                     }
                 })
             });
         });
 
-        var stopAnimationLineTop = function () {},
-            stopAnimationLineBottom = function () {};
+        window.addEventListener('scroll', checkActiveLi);
+
+        function checkActiveLi () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                offsets = [];
+
+            targets.forEach(function (target, i) {
+                offsets[i] = N.offset(target).top;
+            });
+
+            for (var i = 0; i < offsets.length; i++) {
+                if (offsets[i + 1]) {
+                    if ((scrollTop >= offsets[i] && scrollTop < offsets[i + 1]) || scrollTop <= offsets[0]) {
+                        setActiveLi(navItems[i]);
+                        break;
+                    }
+                } else setActiveLi(navItems[i])
+            }
+        }
+
+        function setActiveLi (navItem) {
+            navItemsActive.classList.remove('active');
+            navItem.classList.add('active');
+            lineGoTo(navItem);
+
+            navItemsActive = navItem;
+        }
+
+        var stopAnimationLine = function () {};
 
         function lineGoTo (toNavItem) {
-            stopAnimationLineBottom();
-            stopAnimationLineTop();
+            stopAnimationLine();
 
             var top = parseInt(navLine.style.top),
                 bottom = parseInt(navLine.style.bottom),
@@ -67,15 +100,15 @@
                 deltaBottom = newBottom - bottom;
 
             if (deltaTop > deltaBottom) {
-                stopAnimationLineBottom = N.animate({
-                    duration: 300,
+                stopAnimationLine = N.animate({
+                    duration: 500,
                     do: function (progress) {
                         navLine.style.bottom = bottom + deltaBottom * progress + 'px'
                     },
                     timing: easeInOut,
                     callback: function () {
-                        stopAnimationLineTop = N.animate({
-                            duration: 300,
+                        stopAnimationLine = N.animate({
+                            duration: 500,
                             do: function (progress) {
                                 navLine.style.top = top + deltaTop * progress + 'px'
                             },
@@ -84,15 +117,15 @@
                     }
                 })
             } else {
-                stopAnimationLineTop = N.animate({
-                    duration: 300,
+                stopAnimationLine = N.animate({
+                    duration: 500,
                     do: function (progress) {
                         navLine.style.top = top + deltaTop * progress + 'px'
                     },
                     timing: easeInOut,
                     callback: function () {
-                        stopAnimationLineBottom = N.animate({
-                            duration: 300,
+                        stopAnimationLine = N.animate({
+                            duration: 500,
                             do: function (progress) {
                                 navLine.style.bottom = bottom + deltaBottom * progress + 'px'
                             },
