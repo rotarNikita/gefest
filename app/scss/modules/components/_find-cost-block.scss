@@ -1,0 +1,46 @@
+.find-cost-block {
+  position: relative;
+  height: 110px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  z-index: 1;
+  &_text {
+    color: #fff;
+    font-weight: 700;
+  }
+  &_button {
+    border-radius: 10px;
+    background-color: #0f1f43;
+    &:hover {
+      color: #0f1f43;
+    }
+  }
+  &_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #0f1e45;
+    z-index: -1;
+    filter: blur(1px);
+    &_1, &_2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    &_1 {
+      background: url("../img/single-object/slide-image.png") no-repeat 50% 0;
+      background-size: cover;
+      opacity: 0.5;
+    }
+    &_2 {
+      background-image: linear-gradient(66deg, rgba(255, 255, 255, 0) 31%, rgba(255, 255, 255, 0) 41%, #ffffff 100%)
+    }
+  }
+}

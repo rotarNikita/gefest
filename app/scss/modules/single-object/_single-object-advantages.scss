@@ -1,0 +1,54 @@
+.single-object_advantages {
+  position: relative;
+  background: url("../img/single-object/advantages-background.png") no-repeat 50% 50%;
+  background-size: cover;
+  padding: 50px;
+  .block-title {
+    color: #fff;
+  }
+  * {
+    position: relative;
+    z-index: 1;
+  }
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &_item {
+    width: 50%;
+    white-space: nowrap;
+    padding-right: 30px;
+    padding-bottom: 70px;
+    font-size: 0;
+    line-height: 0;
+    .img {
+      width: 70px;
+      height: 70px;
+      background: no-repeat 50% 50%;
+      background-size: contain;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .text {
+      white-space: normal;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+      display: inline-block;
+      vertical-align: middle;
+      width: calc(100% - 70px);
+      padding-left: 40px;
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#000, .5);
+    z-index: 0;
+  }
+}

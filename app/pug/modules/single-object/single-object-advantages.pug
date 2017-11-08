@@ -1,0 +1,43 @@
+-
+    dataAdvantages = [
+        {
+            text: '20 лет на рынке Украины',
+            img: 'img/single-object/icons/0.png'
+        },
+        {
+            text: '475 000 м2 возводится в новых зданиях',
+            img: 'img/single-object/icons/1.png'
+        },
+        {
+            text: '12 крупных объектов сданы в эксплуатацию за последние 11 лет',
+            img: 'img/single-object/icons/2.png'
+        },
+        {
+            text: 'Уникпльная архитектура каждого дома',
+            img: 'img/single-object/icons/3.png'
+        },
+        {
+            text: 'Холлы украшены греческим мрамором',
+            img: 'img/single-object/icons/4.png'
+        },
+        {
+            text: 'Бронированные входные двери и энергосберегающие стеклопакеты',
+            img: 'img/single-object/icons/5.png'
+        },
+        {
+            text: 'Современные системы пожаротушения',
+            img: 'img/single-object/icons/6.png'
+        },
+        {
+            text: 'Возможность полной перепланировки квартир',
+            img: 'img/single-object/icons/7.png'
+        }
+    ];
+
+section.single-object_advantages#single-object-advantages
+    h2.block-title Наши преимущества
+    ul.single-object_advantages_list
+        each item in dataAdvantages
+            li.single-object_advantages_item
+                .img(style='background-image: url(' + item.img + ')')
+                .text= item.text

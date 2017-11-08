@@ -205,7 +205,7 @@
 
                 video.pause();
             });
-            
+
             video.addEventListener('ended', videoWrapper.click.bind(videoWrapper));
         }
     }
