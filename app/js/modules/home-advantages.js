@@ -41,30 +41,37 @@
         });
 
         function resizeCalc () {
-            var svgMainCircleSize = svgMainCircle.getBoundingClientRect();
-            svgMask.style.height = svgMainCircleSize.height + 200 + 'px';
+            var svgMainCircleSize = svgMainCircle.getBoundingClientRect(),
+                svgMaskClientHeight = svgMainCircleSize.height + 200;
+
+            svgMask.style.height = svgMaskClientHeight + 'px';
 
             // radius of small circle is 100px
             // radius of gradient circle is 85px
             // and stroke-width of gradient circle is 10px
-            var svgSmallCircleSize = 100 / svgMask.clientWidth * 100,
-                svgGradientCircleSize = 85 / svgMask.clientWidth * 100,
-                svgGradientCircleStrokeSize = 10 / svgMask.clientWidth * 100;
+            var svgMaskClientWidth = svgMask.clientWidth || window.innerWidth;
+
+            var svgSmallCircleSize = 100 / svgMaskClientWidth * 100,
+                svgGradientCircleSize = 85 / svgMaskClientWidth * 100,
+                svgGradientCircleStrokeSize = 10 / svgMaskClientWidth * 100;
 
             // for calc relative items coordinates
-            var delta = (svgMask.clientWidth - svgMask.clientHeight) / 2;
+            var delta = (svgMaskClientWidth - svgMaskClientHeight) / 2;
 
             Array.prototype.forEach.call(svgSmallCircles, function (item, i) {
-                item.style.r = svgSmallCircleSize;
+                //item.style.r = svgSmallCircleSize;
+                item.setAttribute('r', svgSmallCircleSize);
 
-                svgGradientCircles[i].style.r = svgGradientCircleSize;
+                // svgGradientCircles[i].style.r = svgGradientCircleSize;
+                svgGradientCircles[i].setAttribute('r', svgGradientCircleSize);
                 svgGradientCircles[i].style.strokeWidth = svgGradientCircleStrokeSize;
 
-                advantagesItems[i].style.top = item.attributes.cy.value * svgMask.clientWidth / 100 - delta + 'px';
+                advantagesItems[i].style.top = item.attributes.cy.value * svgMaskClientWidth / 100 - delta + 'px';
             });
 
             // for stroke animate
-            var strokeLength = +svgGradientCircles[0].style.r * Math.PI * 2;
+            // var strokeLength = +svgGradientCircles[0].style.r * Math.PI * 2;
+            var strokeLength = +svgGradientCircles[0].getAttribute('r') * Math.PI * 2;
 
             Array.prototype.forEach.call(svgGradientCircles, function(svgGradientCircle) {
                 svgGradientCircle.style.strokeDasharray = strokeLength;

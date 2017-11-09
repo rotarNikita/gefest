@@ -1,3 +1,5 @@
+include modules/components/breadcrumbs
+
 doctype html
 html(lang='en')
     include modules/components/head
@@ -5,5 +7,7 @@ html(lang='en')
         include modules/components/header
         main.section
             .container
+                +breadcrumbs('Главная', 'Объекты', 'ЖК', 'Секция')
                 h1.block-title Планировки типового этажа
+                include modules/section/section-select
         include modules/components/footer

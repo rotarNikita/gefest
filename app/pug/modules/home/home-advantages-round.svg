@@ -5,7 +5,7 @@
         <mask id="round-mask" maskUnits="userSpaceOnUse">
             <rect x="0" y="0" width="100" height="100" fill="#fff" />
 
-            <circle class="home_advantages_main-circle" r="16.66" cx="50" cy="50" fill="#000" />
+            <circle r="16.66" cx="50" cy="50" fill="#000" />
 
             <circle class="home_advantages_small-circle" r="6" cx="38" cy="40" fill="#fff" />
             <circle class="home_advantages_small-circle" r="6" cx="38" cy="60" fill="#fff" />
@@ -18,6 +18,10 @@
             <stop offset="100%" stop-color="#2153d3" stop-opacity="0.96863" />
         </linearGradient>
     </defs>
+
+    <g fill="transparent">
+        <circle class="home_advantages_main-circle" r="16.66" cx="50" cy="50" />
+    </g>
 
     <g mask="url(#round-mask)">
         <rect class="home_advantages_mask_rect" x="0" y="0" width="100" height="100" />

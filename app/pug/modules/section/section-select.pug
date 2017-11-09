@@ -1,0 +1,15 @@
+.section_select
+    .row
+        each val in [1, 2, 3]
+            .col-md-4
+                .section_select_wrapper
+                    .section_select_input
+                        input(type='text' value='Выберите жилой комплекс')
+                        .value Выберите жилой комплекс
+                        .arrow
+                    ul.section_select_dropdown
+                        - for (var i = 0; i < val; i++)
+                            li Акрополь
+                            li Милос
+                            li Родос
+                            li Корфу

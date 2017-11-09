@@ -1,0 +1,103 @@
+$customSelectWidth: 250px;
+$selectColor: #686868;
+$selectFontSize: 14px;
+$selectBorder: 1px solid #dcdcdc;
+
+.section_select {
+  padding-bottom: 70px;
+  &_wrapper {
+    width: $customSelectWidth;
+    margin: 0 auto;
+    box-shadow: -4px 3px 19px 1px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: box-shadow .3s;
+    &.active {
+      box-shadow: none;
+      .section_select_input {
+        .arrow {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+      .section_select_dropdown {
+        max-height: 148px;
+      }
+    }
+  }
+  &_input {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    cursor: pointer;
+    input {
+      display: none;
+    }
+    .value {
+      box-sizing: content-box;
+      padding: 12px 0 10px 20px;
+      margin-right: 50px;
+      white-space: nowrap;
+      font-size: $selectFontSize;
+      font-weight: 400;
+      line-height: 1;
+      color: $selectColor;
+      overflow: hidden;
+    }
+    .arrow {
+      background: url("../img/section/select-arrow.svg") no-repeat 50% 50%;
+      background-size: contain;
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform .3s;
+    }
+  }
+  &_dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    z-index: 1;
+    background: #fff;
+    box-shadow: -4px 3px 19px 1px rgba(0, 0, 0, 0.15);
+    border-top: $selectBorder;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s;
+    li {
+      line-height: 1;
+      opacity: 0.8;
+      font-size: $selectFontSize;
+      font-weight: 500;
+      padding: 12px 0 10px 10px;
+      cursor: pointer;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        right: 101%;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        width: 6px;
+        height: 6px;
+        background-color: $mainColorNo1;
+        opacity: 0;
+      }
+      &.active {
+        opacity: 1;
+        &:before {
+          opacity: 1;
+        }
+      }
+      &:not(:last-of-type) {
+        border-bottom: $selectBorder;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
