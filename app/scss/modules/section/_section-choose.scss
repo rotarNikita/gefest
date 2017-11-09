@@ -1,0 +1,24 @@
+.section_choose {
+  max-width: 100%;
+  &_flat {
+    cursor: pointer;
+    &:hover {
+      .section_choose_description {
+        opacity: 1;
+      }
+      .section_choose_path.color-1 {
+        fill: rgba(#feebfe, .8);
+      }
+    }
+  }
+  &_path {
+    fill: transparent;
+    transition: fill .3s;
+  }
+  &_description {
+    font-size: 22px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+}

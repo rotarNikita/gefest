@@ -1,0 +1,13 @@
+<svg class="section_choose" width="1233" xmlns="http://www.w3.org/2000/svg" version="1.1"
+     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1233 1281">
+
+    <image class="section_choose_main-image" xlink:href="img/section/section-a.png" x="0" y="0" width="1233" height="1281" />
+
+    <g class="section_choose_flat">
+        <path class="section_choose_path color-1" d="M 168 78 h 156 v 67 h 19 v 273 h 60 v 78 h -274 v -33 h -68 v -320 h 107 z" />
+        <text class="section_choose_description" transform="translate(78 266)" x="0" y="0">
+            <tspan x="0" dy="1.2em">1-комнатная квартира</tspan>
+            <tspan x="73" dy="1.2em">48,10 м2</tspan>
+        </text>
+    </g>
+</svg>
