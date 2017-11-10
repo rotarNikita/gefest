@@ -247,7 +247,7 @@
                 video.play();
             });
 
-            videoWrapper.addEventListener('click', function (event) {
+            videoWrapper.addEventListener('click', function () {
                 this.classList.remove('playing');
 
                 video.pause();
@@ -255,5 +255,61 @@
 
             video.addEventListener('ended', videoWrapper.click.bind(videoWrapper));
         }
+
+        // svg choose stage
+        var svgStageItems = document.querySelectorAll('.single-object_choose_svg_group');
+
+        Array.prototype.forEach.call(svgStageItems, function (svgStageItem) {
+            var path = svgStageItem.querySelector('.single-object_choose_svg_path'),
+                text = svgStageItem.querySelector('.single-object_choose_svg_description'),
+                href = svgStageItem.dataset.href,
+                textHover = false,
+                hover = false;
+
+            path.addEventListener('mouseover', function () {
+                show();
+            });
+
+            path.addEventListener('mouseleave', function () {
+                setTimeout(function () {
+                    if (!textHover) {
+                        hide();
+                    }
+                }, 0);
+            });
+
+            text.addEventListener('mouseover', function () {
+                textHover = true
+            });
+
+            text.addEventListener('mouseleave', function () {
+                textHover = false;
+                hide();
+            });
+
+            svgStageItem.addEventListener('click', function () {
+               if (hover) window.location = href;
+            });
+
+            function show () {
+                hover = true;
+                path.classList.add('hover');
+
+                text.style.display = 'block';
+                text.classList.add('hover');
+            }
+
+            var hideTimeout;
+            function hide () {
+                hover = false;
+                path.classList.remove('hover');
+
+                text.classList.remove('hover');
+                clearTimeout(hideTimeout);
+                hideTimeout = setTimeout(function () {
+                    if (!hover) text.style.display = 'none';
+                }, 300)
+            }
+        })
     }
 }();

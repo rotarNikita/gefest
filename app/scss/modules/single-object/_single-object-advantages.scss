@@ -1,8 +1,7 @@
 .single-object_advantages {
   position: relative;
-  background: url("../img/single-object/advantages-background.png") no-repeat 50% 50%;
-  background-size: cover;
   padding: 50px;
+  background-color: #000000;
   .block-title {
     color: #fff;
   }
@@ -48,7 +47,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(#000, .5);
+    background: url("../img/single-object/advantages-background.png") no-repeat 50% 50%;
+    background-size: cover;
+    filter: grayscale(100%);
+    opacity: 0.35;
     z-index: 0;
   }
 }

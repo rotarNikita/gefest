@@ -1,8 +1,41 @@
 .single-object_choose {
   position: relative;
-  img {
+  &_svg {
     width: 100%;
     display: block;
+    &_path {
+      fill: transparent;
+      cursor: pointer;
+      transition: fill .3s;
+      &.hover {
+        fill: rgba(#fff, .6);
+      }
+    }
+    &_description {
+      opacity: 0;
+      cursor: default;
+      display: none;
+      transition: opacity .3s;
+      path {
+        stroke: #c4c4c4;
+        stroke-width: 1;
+        fill: #ffffff;
+      }
+      text {
+        color: #0f1f43;
+        font-size: 10px;
+        font-weight: 400;
+        user-select: none;
+        .stage {
+          font-size: 12px;
+          font-weight: 700;
+        }
+      }
+      &.hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
   }
   &_text {
     position: absolute;
@@ -16,7 +49,6 @@
     position: absolute;
     bottom: 60px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
   }
-
 }
