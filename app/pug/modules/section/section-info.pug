@@ -1,0 +1,80 @@
+.section_info
+    .row
+        .col-md-3
+            -
+                var dataColors = [
+                    {
+                        color: '#e7f6df',
+                        text: 'квартира - студия'
+                    }, {
+                        color: '#feebfe',
+                        text: '1 - комнатная квартира'
+                    }, {
+                        color: '#fdf8db',
+                        text: '2 - комнатная квартира'
+                    }
+                ]
+
+            table.section_info_colors
+                each item in dataColors
+                    tr
+                        td
+                            .color(style='background-color: ' + item.color)
+                        td.text= item.text
+        .col-md-3
+            -
+                var dataFlats = [
+                    {
+                        number: '7.1',
+                        space: '48.10'
+                    }, {
+                        number: '7.2',
+                        space: '46.48'
+                    }, {
+                        number: '7.3',
+                        space: '78.23'
+                    }, {
+                        number: '7.4',
+                        space: '31.15'
+                    }, {
+                        number: '7.5',
+                        space: '32.87'
+                    }, {
+                        number: '7.6',
+                        space: '67.36'
+                    }, {
+                        number: '7.7',
+                        space: '46.28'
+                    }, {
+                        number: '7.8',
+                        space: '28.12'
+                    }, {
+                        number: '7.9',
+                        space: '52.65'
+                    }
+                ]
+
+            table.section_info_flats
+                tr
+                    td.header(colspan=2) Секция А
+                tr
+                    td Номер квартиры
+                    td Общая площадь
+                each item in dataFlats
+                    tr
+                        td= item.number
+                        td= item.space
+        .col-md-3
+            table.section_info_flats
+                tr
+                    td.header(colspan=2) Секция А
+                tr
+                    td Номер квартиры
+                    td Общая площадь
+                each item in dataFlats
+                    tr
+                        td= item.number
+                        td= item.space
+        .col-md-3.section_info_images
+            img.section_info_position(src='img/section/section-position.png' alt='')
+            img.section_info_compass(src='img/section/compass.png' alt='')

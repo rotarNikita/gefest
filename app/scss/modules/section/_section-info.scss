@@ -1,0 +1,42 @@
+.section_info {
+  padding: 50px 0;
+  &_colors {
+    width: 100%;
+    .color {
+      display: inline-block;
+      width: 70px;
+      height: 30px;
+    }
+    td {
+      vertical-align: middle;
+      padding-bottom: 20px;
+      &.text {
+        padding-left: 10px;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+  &_flats {
+    border: 1px solid #131313;
+    width: 100%;
+    td {
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid rgba(#131313, .4);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 10px 10px 8px 10px;
+      &.header {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+  &_images {
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+  }
+}
