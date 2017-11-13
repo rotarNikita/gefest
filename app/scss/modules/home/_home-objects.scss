@@ -6,6 +6,11 @@
   &_slider {
     margin: 0 -15px;
   }
+  .objects_slider_item_description {
+    img {
+      display: inline-block;
+    }
+  }
   &_item {
     position: relative;
     height: 400px;
@@ -29,6 +34,7 @@
         border-bottom: 2px solid rgba(208, 208, 208, 0.8);
         background: url("../img/home/objects/location-icon.png") no-repeat 10px 50%;
         padding: 0 40px;
+        transition: all .3s;
         span {
           vertical-align: middle;
           display: inline-block;
@@ -49,13 +55,13 @@
         margin: 15px 0;
       }
       .price {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
         padding-left: 5%;
         float: left;
       }
       &_details {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
         padding-right: 5%;
         float: right;
@@ -79,11 +85,18 @@
       }
     }
     &:hover {
+      .objects_slider_item_description {
+        max-height: 254px;
+        opacity: 1;
+      }
       .home_objects_item_description {
         background-color: rgba(#000, .8);
         color: #fff;
-        .address span {
-          color: #fff;
+        .address {
+          background: transparent;
+          span {
+            opacity: 0;
+          }
         }
         &_details {
           color: #fff;

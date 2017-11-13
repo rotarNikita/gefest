@@ -21,28 +21,7 @@
     padding-bottom: 50px;
     max-width: 1300px;
   }
-  .home_objects_item_description .price {
-    font-size: 16px;
-  }
-  .home_objects_item_description_details {
-    font-size: 16px;
-  }
-  .home_objects_item_description .address {
-    transition: all .3s;
-  }
   .home_objects_item {
     margin: 15px 0;
-    &:hover {
-      .objects_slider_item_description {
-        max-height: 254px;
-        opacity: 1;
-      }
-      .home_objects_item_description .address {
-        background: transparent;
-        span {
-          opacity: 0;
-        }
-      }
-    }
   }
 }
