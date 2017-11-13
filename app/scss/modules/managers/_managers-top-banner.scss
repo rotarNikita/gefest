@@ -1,0 +1,31 @@
+.managers_top-banner {
+  background: url("../img/managers/facebook-at-work.jpg") no-repeat 50% 0;
+  background-size: cover;
+  padding: 150px 20px;
+  text-align: center;
+  position: relative;
+  &_title {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 54px;
+    font-weight: 700;
+    letter-spacing: 1.08px;
+    position: relative;
+    z-index: 1;
+  }
+  &_button {
+    position: relative;
+    z-index: 1;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.5;
+    z-index: 0;
+  }
+}

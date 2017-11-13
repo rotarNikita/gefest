@@ -1,0 +1,12 @@
+include modules/components/breadcrumbs
+
+doctype html
+html(lang='en')
+    include modules/components/head
+    body
+        include modules/components/header
+        main.managers
+            include modules/managers/managers-top-banner
+            +breadcrumbs('Главная', 'Менеджеры')
+            include modules/managers/managers-content
+        include modules/components/footer

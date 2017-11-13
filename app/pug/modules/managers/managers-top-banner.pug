@@ -1,0 +1,9 @@
+include ../components/button
+
+.managers_top-banner
+    h3.managers_top-banner_title
+        |МЫ ПОМОЖЕМ ПОДОБРАТЬ ВАМ
+        br
+        |ИДЕАЛЬНЫЙ ВАРИАНТ! 
+    +button('СВЯЗАТЬСЯ С НАМИ', 'button')(class='managers_top-banner_button popup-caller' data-target='callback-form')
+    include ../components/callback-form

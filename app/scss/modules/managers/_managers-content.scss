@@ -1,0 +1,56 @@
+.managers_content {
+  &_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &_item {
+    .photo {
+      width: 360px;
+      height: 360px;
+      margin: 0 auto;
+      background: no-repeat 50% 50%;
+      background-size: cover;
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+    }
+    &_description {
+      width: 300px;
+      background: #fff;
+      box-shadow: 0 0 90px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      padding: 80px 15px 10px 15px;
+      position: relative;
+      top: -80px;
+      text-align: center;
+      color: #343538;
+      .name {
+        font-size: 24px;
+        font-weight: 500;
+        padding: 20px 0;
+        margin-bottom: 10px;
+        position: relative;
+        border-bottom: 1px solid #c4c4c4;
+      }
+      .mail, .number {
+        font-size: 18px;
+        font-weight: 400;
+        padding: 5px 0;
+      }
+      .mail:before {
+        content: '';
+        display: inline-block;
+        background: url('../img/components/footer/mail.png') no-repeat 50% 50%;
+        background-size: contain;
+        width: 20px;
+        height: 10px;
+        margin-right: 5px;
+      }
+      .number {
+        background: url('../img/managers/viber-icon.png') no-repeat 24px 3px;
+        background-size: 20px;
+      }
+    }
+  }
+}
