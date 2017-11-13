@@ -1,0 +1,36 @@
+.about_content {
+  .managers_content_item_description .name {
+    font-size: 23px;
+  }
+  &_text {
+    background-color: #fafafa;
+    padding: 40px;
+    margin-top: -20px;
+    &_title {
+      text-align: center;
+      color: #878c93;
+      font-size: 20px;
+      font-weight: 300;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 320px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        height: 1px;
+        background-color: #ededed;
+      }
+    }
+    p {
+      color: #434447;
+      text-align: justify;
+      font-size: 16px;
+      font-weight: 300;
+      margin: 10px 0;
+    }
+  }
+}
