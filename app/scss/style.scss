@@ -56,6 +56,7 @@
 
 @import "../libs/normalize-scss/normalize";
 @import "../libs/bootstrap/bootstrap_3.3.7";
+@import "../libs/jquery-ui-slider/jquery-ui.scss";
 @import "../libs/slick-1.8.0/slick/slick.scss";
 @import "../libs/lightbox2-master/dist/css/lightbox.scss";
 @import "modules/general";
@@ -69,3 +70,4 @@
 @import "modules/about/index";
 @import "modules/flat/index";
 @import "modules/favorite/index";
+@import "modules/select-apartment/index";

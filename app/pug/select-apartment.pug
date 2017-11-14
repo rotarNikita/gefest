@@ -1,0 +1,14 @@
+include modules/components/breadcrumbs
+
+doctype html
+html(lang='en')
+    include modules/components/head
+    body
+        include modules/components/header
+        main.select-apartment
+            +breadcrumbs('Главная', 'Подобрать квартиру')
+            .container
+                h1.block-title Подобрать квартиру
+                include modules/select-apartment/select-apartment-form
+                include modules/select-apartment/select-apartment-items
+        include modules/components/footer

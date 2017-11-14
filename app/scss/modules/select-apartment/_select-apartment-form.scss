@@ -1,0 +1,101 @@
+.select-apartment_form {
+  box-shadow: -12px 11px 9px 1px rgba(0, 0, 0, 0.15);
+  background-color: #f8f8f8;
+  padding: 40px;
+  margin-bottom: 50px;
+  &_range {
+    text-align: left;
+    display: inline-block;
+    font-size: 0;
+    color: #686868;
+    margin: 30px;
+    &_label {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    &_wrapper {
+      text-align: center;
+    }
+    .range {
+      width: 180px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .from, .to {
+      width: 100px;
+      vertical-align: middle;
+      height: 35px;
+      box-shadow: -4px 3px 19px 1px rgba(0, 0, 0, 0.15);
+      background-color: #ffffff;
+      font-size: 15px;
+      text-align: center;
+      font-weight: 500;
+      border: none;
+    }
+    .ui-slider-horizontal {
+      height: 6px;
+      border-radius: 0;
+      border: solid #b8b8b8;
+      border-width: 1px 0;
+      background-color: #efefef;
+    }
+    .ui-widget-header {
+      background-image: linear-gradient(to top, #de0000 0%, #ffffff 100%);
+    }
+    .ui-slider .ui-slider-handle {
+      width: 0;
+      height: 0;
+      border: none;
+      top: -6px;
+      margin: 0;
+      outline: none;
+      z-index: 2;
+      &:first-of-type:after {
+        content: '';
+        display: block;
+        border-left: 8px solid #ff0000;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+      }
+      &:last-of-type:after {
+        content: '';
+        display: block;
+        border-right: 8px solid #ff0000;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        position: relative;
+        left: -8px;
+      }
+    }
+  }
+  &_info {
+    height: 150px;
+    padding: 30px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_text {
+      color: #686868;
+      .red {
+        color: $mainColorNo1;
+        font-size: 30px;
+        font-weight: 700;
+      }
+    }
+  }
+  &_submit {
+    border: 2px solid $mainColorNo1;
+    padding-top: 16px;
+    background-color: #ffffff;
+    color: $mainColorNo1;
+    &:hover {
+      background-color: $mainColorNo1;
+      color: #fff;
+    }
+  }
+  .section_select {
+    padding-bottom: 20px;
+  }
+}

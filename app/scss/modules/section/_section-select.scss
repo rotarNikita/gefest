@@ -25,7 +25,7 @@ $selectBorder: 1px solid #dcdcdc;
   }
   &_input {
     position: relative;
-    z-index: 2;
+    z-index: 4;
     background: #fff;
     cursor: pointer;
     input {
@@ -60,7 +60,7 @@ $selectBorder: 1px solid #dcdcdc;
     left: 0;
     right: 0;
     padding: 0 20px;
-    z-index: 1;
+    z-index: 3;
     background: #fff;
     box-shadow: -4px 3px 19px 1px rgba(0, 0, 0, 0.15);
     border-top: $selectBorder;

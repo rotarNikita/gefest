@@ -22,6 +22,7 @@ gulp.task('sass', function() {
 gulp.task('script', function() {
 	return gulp.src([
 			'./app/libs/jquery-3.2.1.min.js',
+			'./app/libs/jquery-ui-slider/jquery-ui.min.js',
 			'./app/libs/slick-1.8.0/slick/slick.min.js',
 			'./app/libs/lightbox2-master/dist/js/lightbox.js',
 			'./app/libs/N.js',
