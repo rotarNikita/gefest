@@ -1,0 +1,33 @@
+.flat {
+  &_title {
+    margin: 50px 0;
+    .header_nav_like {
+      width: auto;
+      background-position: 100% 50%;
+      padding-right: 40px;
+      font-size: 18px;
+      font-weight: 400;
+      float: right;
+      margin-top: 10px;
+    }
+    .block-title {
+      float: left;
+      margin: 0;
+    }
+  }
+  .find-cost-block {
+    width: 100%;
+    padding: 0;
+    margin: 50px 0;
+    & > .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:after, &:before {
+        content: none;
+      }
+    }
+  }
+}
+
+@import "flat-description";

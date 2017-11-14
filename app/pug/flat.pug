@@ -1,0 +1,20 @@
+include modules/components/breadcrumbs
+
+doctype html
+html(lang='en')
+    include modules/components/head
+    body
+        include modules/components/header
+        main.flat
+            +breadcrumbs('Главная', 'Объекты', 'ЖК «Акрополь»', 'Секция', 'Квартира')
+            .container
+                .flat_title.clearfix
+                    h1.block-title Планировка квартиры
+                    button.header_nav_like Добавить в избранное
+                include modules/flat/flat-description
+            include modules/flat/flat-find-cost-block
+            .container
+                h3.block-title Общая планировка этажа
+                include modules/section/section-choose.svg
+                include modules/section/section-info
+        include modules/components/footer

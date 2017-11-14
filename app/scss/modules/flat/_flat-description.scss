@@ -1,0 +1,48 @@
+.flat_description {
+  &_photo {
+    max-width: 100%;
+  }
+  &_char {
+    background-color: #0f1f43;
+    color: #fff;
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    .title {
+      padding-bottom: 30px;
+    }
+    &_item {
+      padding-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      .number {
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        padding-top: 13px;
+        overflow: hidden;
+        background-color: #1e315c;
+      }
+      .text, .number {
+        white-space: nowrap;
+        position: relative;
+        z-index: 1;
+      }
+      .text {
+        padding-right: 5px;
+        background-color: #0f1f43;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 20px;
+        height: 1px;
+        background-color: #433464;
+      }
+    }
+  }
+}

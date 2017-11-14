@@ -1,5 +1,8 @@
+include ../components/breadcrumbs
+
 .about_content
     .container
+        +breadcrumbs('Главная', 'О компании')
         h1.block-title О Компании
         .managers_content_items
             - for (var i = 0; i < 3; i++)
