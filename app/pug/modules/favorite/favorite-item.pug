@@ -1,0 +1,35 @@
+.favorite_item
+    .favorite_item_photo(style='background-image: url(img/flat/flat-photo.png)')
+    .favorite_item_info
+        .favorite_item_info_top.clearfix
+            .favorite_item_info_top_left
+                .jk ЖК «РОДОС»
+                .flat 2х - комнатная квартира
+            .favorite_item_info_top_right
+                .stage 7-й этаж
+                .section СЕКЦИЯ А
+        ul.favorite_item_info_space
+            -
+                var spaceData = [
+                    {
+                        text: 'Общая площадь',
+                        number: '64,24 м2'
+                    }, {
+                        text: 'Жилая',
+                        number: '44,9 м2'
+                    }, {
+                        text: 'Кухня',
+                        number: '15,7 м2'
+                    }, {
+                        text: 'Санузел',
+                        number: '9,7 м2'
+                    }
+                ]
+            each item in spaceData
+                li.favorite_item_info_space_item
+                    .text= item.text
+                    .number= item.number
+        .favorite_item_info_address
+            |Фонтанская дор., 25
+            br
+            |(Тополевый, 17А) Одесса

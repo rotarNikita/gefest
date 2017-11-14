@@ -1,0 +1,79 @@
+.favorite_item {
+  display: flex;
+  padding: 30px;
+  box-shadow:
+          -8px 7px 13px rgba(0, 0, 0, 0.11),
+          0 0 90px rgba(0, 0, 0, 0.04);
+  margin-bottom: 70px;
+  &_photo {
+    width: 40%;
+    background: no-repeat 50% 50%;
+    background-size: contain;
+  }
+  &_info {
+    padding-left: 30px;
+    width: 60%;
+    &_top {
+      border-bottom: 1px solid #c4c4c4;
+      margin-bottom: 50px;
+      &_left {
+        float: left;
+        .jk {
+          font-weight: 700;
+        }
+        .flat {
+          font-weight: 500;
+          margin-top: 30px;
+        }
+      }
+      &_right {
+        float: right;
+        padding-right: 40px;
+        .stage, .section {
+          width: 120px;
+          height: 50px;
+          margin-bottom: 15px;
+          font-weight: 500;
+          text-align: center;
+        }
+        .stage {
+          background-color: #ff0000;
+          color: #fff;
+          padding-top: 15px;
+        }
+        .section {
+          font-size: 21px;
+          background-color: rgba(#1b1b48, 0.15);
+          padding-top: 17px;
+        }
+      }
+    }
+    &_space {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      &_item {
+        text-align: center;
+        font-weight: 500;
+        .number {
+          display: inline-block;
+          width: 120px;
+          height: 40px;
+          background-color: #e8e8e8;
+          padding-top: 10px;
+          margin-top: 5px;
+        }
+      }
+    }
+    &_address {
+      font-weight: 500;
+      padding-left: 50px;
+      background: url(../img/home/objects/location-icon.png) no-repeat 0 50%;
+      background-size: 20px;
+      margin-bottom: 50px;
+    }
+  }
+  &:last-of-type {
+    margin-bottom: 100px;
+  }
+}

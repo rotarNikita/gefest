@@ -1,0 +1,14 @@
+include modules/components/breadcrumbs
+
+doctype html
+html(lang='en')
+    include modules/components/head
+    body
+        include modules/components/header
+        main.flat
+            +breadcrumbs('Главная', 'Избранное')
+            .container
+                h1.block-title Избранное
+                each val in [1, 2]
+                    include modules/favorite/favorite-item
+        include modules/components/footer
