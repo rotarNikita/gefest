@@ -1,0 +1,14 @@
+include modules/components/breadcrumbs
+
+doctype html
+html(lang='en')
+    include modules/components/head
+    body
+        include modules/components/header
+        main.contacts
+            +breadcrumbs('Главная', 'Контакты')
+            .container
+                h1.block-title Контакты
+                include modules/contacts/contacts-items
+            include modules/contacts/contacts-form
+        include modules/components/footer

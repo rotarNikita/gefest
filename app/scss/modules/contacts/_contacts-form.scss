@@ -1,0 +1,118 @@
+.contacts_form {
+  background: url("../img/home/project/background.png") no-repeat 50% 50%;
+  background-size: cover;
+  position: relative;
+  &_wrapper {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  &_title {
+    margin: 50px 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+  }
+  &_grid {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  &_input {
+    background: transparent;
+    border: 2px solid rgba(#ffffff, .8);
+    height: 46px;
+    border-radius: 23px;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 0 23px;
+    margin-bottom: 20px;
+    &.cursor {
+      cursor: pointer;
+    }
+    &.textarea {
+      height: 178px;
+      padding: 15px 23px;
+    }
+    &.left {
+      text-align: left;
+    }
+    &::placeholder {
+      color: #fff;
+    }
+  }
+  &_select {
+    .select {
+      position: relative;
+      &:after {
+        content: '>';
+        position: absolute;
+        top: 12px;
+        color: #fff;
+        font-weight: 400;
+        right: 23px;
+        transform: rotate(90deg) scale(0.5, 1.2);
+      }
+    }
+    .dropdown {
+      position: absolute;
+      top: 46px;
+      max-height: 0;
+      padding: 0;
+      opacity: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom-left-radius: 23px;
+      border-bottom-right-radius: 23px;
+      transition: all .5s;
+      li {
+        cursor: pointer;
+        font-size: 20px;
+        &.active {
+          opacity: 0.3;
+        }
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        &:not(.active):hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    &.open {
+      .dropdown {
+        max-height: 200px;
+        opacity: 1;
+        padding: 10px;
+      }
+    }
+  }
+  &_submit {
+    margin-bottom: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding-top: 18px;
+    &:hover {
+      background-color: #fff;
+      color: #f50000;
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($mainColorNo1, .5);
+  }
+}

@@ -1,0 +1,21 @@
+include ../components/button
+
+form.contacts_form
+    .container.contacts_form_wrapper
+        h3.contacts_form_title Заполните анкету и мы с Вами свяжемся!
+        .row.contacts_form_grid
+            .col-md-4
+                .contacts_form_select
+                    .select
+                        input.contacts_form_input.cursor(type='text' readonly value='Получатель')
+                    ul.dropdown
+                        li.active Получатель
+                        li mail1@mail.com
+                        li mail2@mail.com
+                input.contacts_form_input(type='text' placeholder='ФИО*' required)
+                input.contacts_form_input(type='tel' placeholder='Номер телефона*' required)
+                input.contacts_form_input(type='email' placeholder='E-mail*' required)
+            .col-md-4
+                input.contacts_form_input.left(type='text' placeholder='Тема')
+                textarea.contacts_form_input.left.textarea Комментарий
+        +button('СВЯЗАТЬСЯ С НАМИ', 'input')(type='submit' class='contacts_form_submit')
