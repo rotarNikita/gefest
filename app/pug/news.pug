@@ -1,0 +1,13 @@
+include modules/components/breadcrumbs
+
+doctype html
+html(lang='en')
+    include modules/components/head
+    body
+        include modules/components/header
+        main.flat
+            +breadcrumbs('Главная', 'Новости')
+            .container
+                h1.block-title Новости
+                include modules/news/news-content
+        include modules/components/footer
