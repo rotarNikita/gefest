@@ -1,0 +1,28 @@
+.single-news {
+  .block-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 30px 0;
+    &:before {
+      display: block;
+      float: left;
+    }
+  }
+  .home_news_slide_date {
+    opacity: 0.75;
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &_content {
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+    }
+    p {
+      font-weight: 400;
+    }
+  }
+}
