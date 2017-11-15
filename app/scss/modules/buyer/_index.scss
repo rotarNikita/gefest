@@ -1,0 +1,9 @@
+.buyer {
+  .flat_find-cost-block > .container {
+    justify-content: space-around;
+  }
+}
+
+@import "buyer-top";
+@import "buyer-conditions";
+@import "buyer-advantages";

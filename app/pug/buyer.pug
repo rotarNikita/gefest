@@ -1,0 +1,16 @@
+include modules/components/breadcrumbs
+
+doctype html
+html(lang='en')
+    include modules/components/head
+    body
+        include modules/components/header
+        main.buyer
+            include modules/buyer/buyer-top
+            .container
+                +breadcrumbs('Главная', 'Покупателю')
+                h1.block-title Условия покупки
+                include modules/buyer/buyer-conditions
+            include modules/buyer/buyer-callback
+            include modules/buyer/buyer-advantages
+        include modules/components/footer

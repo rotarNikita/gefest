@@ -1,0 +1,10 @@
+include ../components/button
+
+.buyer_top
+    .managers_top-banner
+        h2.managers_top-banner_title
+            |У НАС САМЫЕ ВЫГОДНЫЕ УСЛОВИЯ
+            br
+            |ПОКУПКИ КВАРТИР 
+        +button('СВЯЗАТЬСЯ С НАМИ', 'button')(class='managers_top-banner_button popup-caller' data-target='callback-form')
+        include ../components/callback-form

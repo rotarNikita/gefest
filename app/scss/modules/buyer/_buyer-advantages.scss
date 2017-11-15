@@ -1,0 +1,39 @@
+.buyer_advantages {
+  margin-bottom: 100px;
+  &_container {
+    min-width: 75%;
+    display: flex;
+    @extend .container
+  }
+  &_col {
+    width: 50%;
+  }
+  &_photo {
+    background: no-repeat 100% 100%;
+    background-size: cover;
+  }
+  &_list {
+    font-weight: 400;
+    text-align: justify;
+    padding-left: 20px;
+    .number {
+      opacity: 0.8;
+      color: #ba0c0c;
+      font-size: 142px;
+      font-weight: 700;
+      float: left;
+      padding-right: 20px;
+      height: 105px;
+    }
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: 35px;
+      }
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+  }
+}

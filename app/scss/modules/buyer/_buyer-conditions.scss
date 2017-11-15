@@ -1,0 +1,22 @@
+.buyer_conditions {
+  padding-bottom: 40px;
+  &_title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    &_item {
+      padding-left: 80px;
+      text-align: justify;
+      background: url("../img/buyer/ok-icon.png") no-repeat 0 0;
+      background-size: 60px;
+      margin-bottom: 60px;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+  }
+}
