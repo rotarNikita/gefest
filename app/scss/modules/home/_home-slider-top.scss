@@ -33,11 +33,16 @@
       line-height: 1.2;
       text-transform: uppercase;
     }
-    .jk {
+    .jk a {
+      color: inherit;
       font-size: 54px;
       font-weight: bold;
       line-height: 1.2;
       text-transform: uppercase;
+      transition: color .3s;
+      &:hover {
+        color: $mainColorNo1;
+      }
     }
   }
   &_label {
