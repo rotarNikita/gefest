@@ -1,1 +1,7 @@
+.projects {
+  & + .footer .footer_map {
+    margin-left: $asideWidthClose;
+  }
+}
+
 @import "projects-item";
