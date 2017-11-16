@@ -43,6 +43,10 @@
             })
         });
 
+        function easeInOut (t) {
+            return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+
         function imgMapResize () {
             mapPath.style.strokeWidth = 100 / imgMap.getBoundingClientRect().width;
         }
