@@ -1,0 +1,17 @@
+-
+    var anchorData = [
+        { anchor: '#projects-item-1', text: 'ГРЕЧЕСКАЯ ПЛОЩАДЬ' },
+        { anchor: '#projects-item-2', text: 'СКВЕР<br>ГЕРОЕВ-ЛЁТЧИКОВСКВЕР' },
+        { anchor: '#projects-item-3', text: 'ГРЕЧЕСКАЯ ПЛОЩАДЬ' },
+        { anchor: '#projects-item-4', text: 'ГРЕЧЕСКАЯ ПЛОЩАДЬ' },
+        { anchor: '#footer-map', text: 'Контакты' }
+    ]
+
+aside.single-object_aside(style='background-image: url(img/single-object/slide-image.png)')
+    nav.single-object_aside_nav
+        .line
+        ul.single-object_aside_ul
+            each item, i in anchorData
+                li.single-object_aside_li(class=i === 0 ? 'active' : '')
+                    .square
+                    a.single-object_aside_anchor(href=item.anchor)!= item.text

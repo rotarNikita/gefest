@@ -1,0 +1,45 @@
+.projects_item {
+  overflow: hidden;
+  &_description {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: rgba(#fff, .65);
+    padding: 30px 5% 100px 5%;
+    transition: all .7s;
+    .overflow {
+      max-height: 100%;
+      overflow-x: auto;
+    }
+    .block-title {
+      font-size: 30px;
+      margin-top: 0;
+      margin-bottom: 0.83em;
+    }
+    p {
+      color: #1e1f21;
+    }
+    &.close {
+      cursor: pointer;
+      transform: translateX(95%);
+    }
+  }
+  .single-object_slider_zoom {
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  .slick-arrow {
+    bottom: 20px;
+    top: unset;
+    transform: none;
+  }
+  .slick-prev {
+    left: 20px;
+  }
+  .slick-next {
+    right: 100px;
+  }
+}

@@ -41,6 +41,7 @@ $asideWidth: 400px;
       background-color: #fff;
       margin-right: 30px;
       transition: all .3s;
+      vertical-align: middle;
     }
     &:hover, &.active {
       color: $objectAnchor;
@@ -60,6 +61,10 @@ $asideWidth: 400px;
     line-height: 1.2;
     font-weight: bold;
     color: inherit;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    bottom: -3px;
   }
   &.fixed {
     position: fixed;
