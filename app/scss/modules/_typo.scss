@@ -37,3 +37,9 @@ $lightTypoColor: #adb3bc;
     background-color: $mainColorNo1;
   }
 }
+
+@media (max-width: 1200px) {
+  .block-title {
+    text-align: center;
+  }
+}

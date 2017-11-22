@@ -120,3 +120,11 @@ a {
 	flex-wrap: wrap;
 }
 
+@media (max-width: 450px) {
+	.slick-arrow {
+		width: 30px;
+		height: 30px;
+		font-size: 12px;
+	}
+}
+
