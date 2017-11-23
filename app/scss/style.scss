@@ -76,3 +76,7 @@
 @import "modules/contacts/index";
 @import "modules/buyer/index";
 @import "modules/projects/index";
+
+body, html {
+  overflow-x: hidden;
+}

@@ -43,3 +43,15 @@ $lightTypoColor: #adb3bc;
     text-align: center;
   }
 }
+
+@media (max-width: 450px) {
+  .block-title {
+    font-size: 22px;
+    margin: 20px 0;
+    &:before {
+      width: 17px;
+      height: 17px;
+      margin-right: 15px;
+    }
+  }
+}

@@ -33,8 +33,26 @@
         homeObjectsSlider.slick({
             adaptiveHeight: true,
             rows: 2,
-            slidesPerRow: 3
-        })
+            slidesPerRow: 3,
+            //checkRow: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesPerRow: 2,
+                        rows: 2
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesPerRow: 1,
+                        rows: 1,
+                        checkRows: true
+                    }
+                }
+            ]
+        });
     }
 
     // home news slider
