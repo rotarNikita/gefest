@@ -14,27 +14,29 @@
             el = options.element || null,
             callback = options.callback;
 
-        var elOffsetTop, windowHeight;
+        // var elOffsetTop, windowHeight;
 
         window.addEventListener('scroll', view);
-        window.addEventListener('resize', resize);
-        resize();
+        // window.addEventListener('resize', resize);
+        // resize();
         view();
 
         function view () {
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                elOffsetTop = N.offset(el).top;
+                windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
             if (scrollTop + windowHeight >= elOffsetTop + offsetTop && scrollTop <= elOffsetTop + offsetTop) {
                 callback();
                 window.removeEventListener('scroll', view);
-                window.removeEventListener('resize', resize);
+                // window.removeEventListener('resize', resize);
             }
         }
 
-        function resize () {
-            elOffsetTop = N.offset(el).top;
-            windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        }
+        // function resize () {
+        //     elOffsetTop = N.offset(el).top;
+        //     windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        // }
     };
 
     N.animate = function (options) {

@@ -1,0 +1,11 @@
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+     width="100%" viewBox="0 0 180 180"
+     preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <linearGradient id="border" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#c43e51" stop-opacity="0.98824" />
+            <stop offset="100%" stop-color="#2153d3" stop-opacity="0.96863" />
+        </linearGradient>
+    </defs>
+    <circle class="home_advantages_gradient-circle" cx="90" cy="90" r="85" fill="transparent" stroke="url(#border)" stroke-width="10" />
+</svg>

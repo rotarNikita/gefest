@@ -12,11 +12,6 @@
             <circle class="home_advantages_small-circle" r="6" cx="62" cy="40" fill="#fff" />
             <circle class="home_advantages_small-circle" r="6" cx="62" cy="60" fill="#fff" />
         </mask>
-
-        <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#c43e51" stop-opacity="0.98824" />
-            <stop offset="100%" stop-color="#2153d3" stop-opacity="0.96863" />
-        </linearGradient>
     </defs>
 
     <g fill="transparent">
@@ -25,13 +20,6 @@
 
     <g mask="url(#round-mask)">
         <rect class="home_advantages_mask_rect" x="0" y="0" width="100" height="100" />
-    </g>
-
-    <g>
-        <circle class="home_advantages_gradient-circle" r="6" cx="38" cy="40" fill="transparent" stroke="url(#border-gradient)" stroke-width="1"/>
-        <circle class="home_advantages_gradient-circle" r="6" cx="38" cy="60" fill="transparent" stroke="url(#border-gradient)" stroke-width="1"/>
-        <circle class="home_advantages_gradient-circle" r="6" cx="62" cy="40" fill="transparent" stroke="url(#border-gradient)" stroke-width="1"/>
-        <circle class="home_advantages_gradient-circle" r="6" cx="62" cy="60" fill="transparent" stroke="url(#border-gradient)" stroke-width="1"/>
     </g>
 
     <g>
