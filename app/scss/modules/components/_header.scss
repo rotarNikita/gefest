@@ -184,18 +184,17 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      align-items: center;
       position: relative;
       li {
+        display: flex;
+        align-items: center;
         padding: 0 15px;
         a {
           color: $typoColorNo2;
           font-weight: 500;
           text-transform: uppercase;
           transition: 0.5s all;
-          vertical-align: middle;
         }
-        &:last-child,
         &:first-child {
           a {
             display: inline-block;
@@ -310,6 +309,9 @@
 }
 
 @media (max-width: 1200px) {
+  .header_nav_wrapper li {
+    display: block;
+  }
   .header_info_lang {
     display: none;
   }

@@ -46,19 +46,15 @@
                 });
             });
 
-            mapResize();
-            window.addEventListener('resize', mapResize);
+            // mobile map
+            var mediaQuery = window.matchMedia("(max-width: 1200px)").matches;
 
-            function mapResize () {
-                var mediaQuery = window.matchMedia("(max-width: 1200px)").matches;
-
-                if (mediaQuery) {
-                    map.setCenter(mapCenterMobile);
-                    map.setZoom(mapZoomMobile);
-                } else {
-                    map.setCenter(mapCenter);
-                    map.setZoom(mapZoom);
-                }
+            if (mediaQuery) {
+                map.setCenter(mapCenterMobile);
+                map.setZoom(mapZoomMobile);
+            } else {
+                map.setCenter(mapCenter);
+                map.setZoom(mapZoom);
             }
         }
     }

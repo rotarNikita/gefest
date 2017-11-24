@@ -1,20 +1,35 @@
 +function() {
 
-    window.addEventListener('load', function() {
-        //header mouse over menu
-        var hoverLine = $('.hover_line');
-        //передаём координаты для line
-        var firstOffsetLeft = $('header .header_nav_wrapper li.active').offset().left;
-        //передаём ширину для line
-        var firstWidth = $('header .header_nav_wrapper li.active').outerWidth();
-        hoverLine.css({left: firstOffsetLeft + 'px', maxWidth: firstWidth + 'px'});
+    var headerNav = document.querySelector('.header_nav');
 
-        $('header .header_nav_wrapper li').mouseover(function(){
-            var thisLi = $(this);
-            var offsetLeft = thisLi.position().left;
-            var width = thisLi.outerWidth();
-            hoverLine.css({left: offsetLeft + 'px', maxWidth: width + 'px'});
+    if (headerNav) {
+        var hoverLine = headerNav.querySelector('.hover_line'),
+            itemActive = headerNav.querySelector('li.active'),
+            items = headerNav.querySelectorAll('li');
+
+
+        window.addEventListener('load', function () {
+            lineInit();
         });
-    });
+        window.addEventListener('resize', function () {
+            lineInit();
+        });
 
+        Array.prototype.forEach.call(items, function (item) {
+            item.addEventListener('mouseover', function () {
+                lineInit(this)
+            });
+
+            item.addEventListener('mouseout', function () {
+                lineInit()
+            });
+        });
+
+        function lineInit (element) {
+            element = element || itemActive;
+
+            hoverLine.style.left = N.offset(element).left + 'px';
+            hoverLine.style.width = element.offsetWidth + 'px';
+        }
+    }
 }();
