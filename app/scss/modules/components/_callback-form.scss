@@ -41,3 +41,22 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .callback-form {
+    textarea {
+      display: none;
+    }
+  }
+  .callback-form_button {
+    width: 100%;
+    margin-top: 0;
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .callback-form {
+    padding: 20px;
+  }
+}
