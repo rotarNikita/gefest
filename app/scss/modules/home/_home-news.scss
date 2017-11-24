@@ -83,3 +83,37 @@
     }
   }
 }
+
+@media (max-width: 1300px) {
+  .home_news .slick-prev {
+    left: 50px;
+  }
+  .home_news .slick-next {
+    right: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home_news_slide_image {
+    height: auto;
+  }
+  .home_news_slide_title {
+    height: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .home_news_slide_title {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .home_news .slick-prev {
+    left: 5px;
+  }
+  .home_news .slick-next {
+    right: 5px;
+  }
+  .home_news_slide {
+    margin-bottom: 20px;
+  }
+}

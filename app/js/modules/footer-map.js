@@ -13,11 +13,12 @@
         mapScript.addEventListener('load', initFooterMap);
 
         function initFooterMap () {
-            var mapCenter = {lat: 46.468676, lng: 30.839451};
+            var mapCenter = {lat: 46.468676, lng: 30.839451},
+                mapCenterMobile = {lat: 46.456719, lng: 30.735203},
+                mapZoom = 12,
+                mapZoomMobile = 13;
 
             var map = new google.maps.Map(document.getElementById('footer-map'), {
-                zoom: 12,
-                center: mapCenter,
                 disableDefaultUI: true
             });
 
@@ -43,7 +44,22 @@
                     position: {lat: dataMarker[0], lng: dataMarker[1]},
                     map: map
                 });
-            })
+            });
+
+            mapResize();
+            window.addEventListener('resize', mapResize);
+
+            function mapResize () {
+                var mediaQuery = window.matchMedia("(max-width: 1200px)").matches;
+
+                if (mediaQuery) {
+                    map.setCenter(mapCenterMobile);
+                    map.setZoom(mapZoomMobile);
+                } else {
+                    map.setCenter(mapCenter);
+                    map.setZoom(mapZoom);
+                }
+            }
         }
     }
 }();

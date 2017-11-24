@@ -62,7 +62,17 @@
         homeNewsSlider.slick({
             rows: 2,
             slidesPerRow: 2,
-            adaptiveHeight: true
+            adaptiveHeight: true,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesPerRow: 1,
+                        rows: 1,
+                        checkRows: true
+                    }
+                }
+            ]
         })
     }
 

@@ -240,6 +240,9 @@
 }
 
 @media (max-width: 450px) {
+  #footer-map {
+    height: 300px;
+  }
   .footer_map_contacts_subtitle {
     font-size: 20px;
   }
