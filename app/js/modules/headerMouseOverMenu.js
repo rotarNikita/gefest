@@ -7,23 +7,46 @@
             itemActive = headerNav.querySelector('li.active'),
             items = headerNav.querySelectorAll('li');
 
+        var desktop = false;
+        window.addEventListener('load', resize);
+        window.addEventListener('resize', resize);
 
-        window.addEventListener('load', function () {
-            lineInit();
-        });
-        window.addEventListener('resize', function () {
-            lineInit();
-        });
-
-        Array.prototype.forEach.call(items, function (item) {
-            item.addEventListener('mouseover', function () {
-                lineInit(this)
+        function initMenuListeners () {
+            Array.prototype.forEach.call(items, function (item) {
+                item.addEventListener('mouseover', mouseover);
+                item.addEventListener('mouseout', mouseout);
             });
+        }
 
-            item.addEventListener('mouseout', function () {
-                lineInit()
+        function mouseover () {
+            lineInit(this);
+            console.log('!!!')
+        }
+
+        function mouseout () {
+            lineInit()
+        }
+
+        function removeMenuListeners () {
+            Array.prototype.forEach.call(items, function (item) {
+                item.removeEventListener('mouseover', mouseover);
+                item.removeEventListener('mouseout', mouseout);
             });
-        });
+        }
+
+        function resize () {
+            var mediaQuery = window.matchMedia('(max-width: 1200px)').matches;
+
+            if (mediaQuery) {
+                if (desktop) removeMenuListeners();
+                desktop = false;
+            } else {
+                if (desktop) removeMenuListeners();
+                lineInit();
+                initMenuListeners();
+                desktop = true;
+            }
+        }
 
         function lineInit (element) {
             element = element || itemActive;
