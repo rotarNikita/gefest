@@ -19,8 +19,7 @@
         }
 
         function mouseenter () {
-            lineInit(this);
-            console.log('!!!')
+            lineInit(this)
         }
 
         function mouseleave () {

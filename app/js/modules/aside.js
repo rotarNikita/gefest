@@ -141,23 +141,28 @@
         // aside scroll
         var maxTop, maxBottom, bottom,
             header = document.querySelector('.header'),
-            footer = document.querySelector('.footer_after');
-
-        asideVariablesInit();
-        window.addEventListener('load', asideVariablesInit);
+            footer = document.querySelector('.footer_after'),
+            delta = 0;
 
         asideScroll();
+        window.addEventListener('load', asideScroll);
+        window.addEventListener('resize', asideScroll);
         window.addEventListener('scroll', asideScroll);
 
         function asideVariablesCalc () {
-            maxTop = header.offsetHeight;
+            var mediaQuery = window.matchMedia('(max-width: 1200px)').matches;
+
+            if (mediaQuery) {
+                maxTop = 0;
+                delta = header.offsetHeight
+            }
+            else {
+                maxTop = header.offsetHeight;
+                delta = 0;
+            }
+
             maxBottom = N.offset(footer).top;
             bottom = footer.offsetHeight;
-        }
-
-        function asideVariablesInit () {
-            asideVariablesCalc();
-            asideScroll();
         }
 
         function asideScroll () {
@@ -166,17 +171,14 @@
 
             asideVariablesCalc();
 
-            if (scrollTop > maxTop && scrollBottom < maxBottom) {
-                aside.className = 'single-object_aside';
-                aside.classList.add('fixed');
-            } else if (scrollTop <= maxTop) {
-                aside.className = 'single-object_aside';
+            if (scrollTop > maxTop + delta && scrollBottom < maxBottom) {
+                aside.className = 'single-object_aside fixed';
+            } else if (scrollTop <= maxTop + delta) {
+                aside.className = 'single-object_aside top';
                 aside.style.top = maxTop + 'px';
-                aside.classList.add('top');
             } else {
-                aside.className = 'single-object_aside';
+                aside.className = 'single-object_aside bottom';
                 aside.style.bottom = bottom + 'px';
-                aside.classList.add('bottom');
             }
         }
     }

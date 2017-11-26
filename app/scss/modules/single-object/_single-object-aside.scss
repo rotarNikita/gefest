@@ -81,10 +81,12 @@ $asideWidth: 400px;
     left: 0;
     bottom: unset!important;
   }
-  &:hover {
-    max-width: $asideWidth;
-    .single-object_aside_ul {
+  @media (min-width: 1201px) {
+    &:hover {
       max-width: $asideWidth;
+      .single-object_aside_ul {
+        max-width: $asideWidth;
+      }
     }
   }
   &:before {
