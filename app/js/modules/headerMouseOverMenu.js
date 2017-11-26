@@ -13,24 +13,24 @@
 
         function initMenuListeners () {
             Array.prototype.forEach.call(items, function (item) {
-                item.addEventListener('mouseover', mouseover);
-                item.addEventListener('mouseout', mouseout);
+                item.addEventListener('mouseenter', mouseenter);
+                item.addEventListener('mouseleave', mouseleave);
             });
         }
 
-        function mouseover () {
+        function mouseenter () {
             lineInit(this);
             console.log('!!!')
         }
 
-        function mouseout () {
+        function mouseleave () {
             lineInit()
         }
 
         function removeMenuListeners () {
             Array.prototype.forEach.call(items, function (item) {
-                item.removeEventListener('mouseover', mouseover);
-                item.removeEventListener('mouseout', mouseout);
+                item.removeEventListener('mouseenter', mouseenter);
+                item.removeEventListener('mouseleave', mouseleave);
             });
         }
 

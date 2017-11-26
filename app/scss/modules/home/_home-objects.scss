@@ -62,30 +62,30 @@
         //float: left;
         text-align: center;
       }
-      //&_details {
-      //  font-size: 16px;
-      //  font-weight: 500;
-      //  padding-right: 5%;
-      //  float: right;
-      //  text-transform: lowercase;
-      //  transition: all .3s;
-      //  &:after {
-      //    content: '';
-      //    display: inline-block;
-      //    width: 30px;
-      //    height: 2px;
-      //    background-color: #000;
-      //    margin-bottom: 3px;
-      //    margin-left: 10px;
-      //    transition: all .3s;
-      //  }
-      //  &:hover {
-      //    &:after {
-      //      background-color: $mainColorNo1;
-      //      transform: rotate(90deg);
-      //    }
-      //  }
-      //}
+      &_details {
+        font-size: 16px;
+        font-weight: 500;
+        padding-right: 5%;
+        float: right;
+        text-transform: lowercase;
+        transition: all .3s;
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 30px;
+          height: 2px;
+          background-color: #000;
+          margin-bottom: 3px;
+          margin-left: 10px;
+          transition: all .3s;
+        }
+        &:hover {
+          &:after {
+            background-color: $mainColorNo1;
+            transform: rotate(90deg);
+          }
+        }
+      }
     }
     &:hover {
       .objects_slider_item_description {
