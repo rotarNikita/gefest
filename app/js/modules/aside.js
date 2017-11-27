@@ -59,6 +59,14 @@
 
         window.addEventListener('scroll', checkActiveLi);
 
+        var checkActiveLiMedia = false;
+        function checkActiveLiResize () {
+            checkActiveLiMedia = window.matchMedia('(max-width: 1200px)').matches;
+        }
+
+        checkActiveLiResize();
+        window.addEventListener('resize', checkActiveLiResize);
+
         function checkActiveLi () {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
                 offsets = [];
@@ -80,7 +88,14 @@
         function setActiveLi (navItem) {
             navItemsActive.classList.remove('active');
             navItem.classList.add('active');
-            lineGoTo(navItem);
+
+            console.log(checkActiveLiMedia);
+            if (checkActiveLiMedia) {
+                var newTop =  navItem.offsetTop + navItem.offsetHeight / 2;
+
+                navLine.style.bottom = navUlHeight - newTop + 'px';
+                navLine.style.top = newTop + 'px'
+            } else lineGoTo(navItem);
 
             navItemsActive = navItem;
         }
