@@ -151,7 +151,7 @@
                     path.classList.add('hover');
                     if (!hover) setTimeout(function () {
                         path.classList.remove('hover');
-                    }, deltaAnimationMobile + svgStageItemIndex * deltaAnimationMobile)
+                    }, deltaAnimationMobile)
 
                 }, intervalAnimationMobile + svgStageItemIndex * deltaAnimationMobile);
 

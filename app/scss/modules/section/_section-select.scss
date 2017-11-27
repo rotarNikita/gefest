@@ -14,11 +14,13 @@ $selectBorder: 1px solid #dcdcdc;
     &.active {
       box-shadow: none;
       .section_select_input {
+        z-index: 6;
         .arrow {
           transform: translateY(-50%) rotate(180deg);
         }
       }
       .section_select_dropdown {
+        z-index: 5;
         max-height: 148px;
       }
     }
@@ -99,5 +101,14 @@ $selectBorder: 1px solid #dcdcdc;
         opacity: 1;
       }
     }
+  }
+}
+
+@media (max-width: 992px) {
+  .section_select_wrapper {
+    margin: 20px auto;
+  }
+  .section_select {
+    padding-bottom: 0;
   }
 }

@@ -2,7 +2,7 @@
   width: 100%;
   &_flat {
     cursor: pointer;
-    &:hover {
+    &:hover, &.hover {
       .section_choose_description {
         opacity: 1;
       }
