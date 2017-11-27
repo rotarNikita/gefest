@@ -153,6 +153,8 @@
                 }, intervalAnimationMobile + svgStageItemIndex * deltaAnimationMobile);
 
                 text.children[0].setAttribute('d', 'M 169 378 h 192 v 45 l 10 10 l -10 10 v 45 h -192 Z');
+                text.children[1].setAttribute('style', 'font-size: 24px;');
+                text.children[1].children[0].setAttribute('style', 'font-size: 26px;');
             }
 
             function show () {
