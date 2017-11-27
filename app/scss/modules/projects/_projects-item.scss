@@ -44,3 +44,31 @@
     right: 100px;
   }
 }
+
+@media (max-width: 768px) {
+  .projects_item_description {
+    width: 80%;
+  }
+}
+
+@media (max-width: 450px) {
+  .projects_item_description {
+    padding: 10px 5% 50px 5%;
+    width: 100%;
+  }
+  .projects_item_description .block-title {
+    font-size: 22px;
+  }
+  .projects_item_description p {
+    font-size: 12px;
+  }
+  .projects_item .slick-arrow {
+    bottom: 10px;
+  }
+  .projects_item .single-object_slider_zoom {
+    bottom: 10px;
+  }
+  .projects_item .slick-next {
+    right: 60px;
+  }
+}
