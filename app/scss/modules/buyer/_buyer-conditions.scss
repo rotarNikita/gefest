@@ -18,6 +18,29 @@
       line-height: 1.2;
       font-weight: 500;
       font-size: 18px;
+      min-height: 60px;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .buyer_conditions_title {
+    font-size: 18px;
+  }
+  .buyer_conditions {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .buyer_conditions_title {
+    margin-bottom: 20px;
+  }
+  .buyer_conditions_list_item {
+    font-size: 14px;
+    padding-left: 40px;
+    background-size: 30px;
+    min-height: 30px;
+    margin-bottom: 30px;
   }
 }

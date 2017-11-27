@@ -37,3 +37,27 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  .buyer_advantages_photo {
+    display: none;
+  }
+  .buyer_advantages_list {
+    padding-left: 0;
+  }
+  .buyer_advantages_col {
+    width: 100%;
+  }
+  .buyer_advantages {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .buyer_advantages_list .number {
+    font-size: 69px;
+  }
+  .buyer_advantages_list li {
+    font-size: 14px;
+  }
+}

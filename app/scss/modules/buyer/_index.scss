@@ -4,6 +4,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .buyer .flat_find-cost-block {
+    margin: 20px 0;
+  }
+}
+
 @import "buyer-top";
 @import "buyer-conditions";
 @import "buyer-advantages";
