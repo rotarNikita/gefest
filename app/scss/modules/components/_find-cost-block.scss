@@ -44,3 +44,23 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  .find-cost-block {
+    padding: 0 5%;
+  }
+  .find-cost-block_text {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .find-cost-block_text {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  .find-cost-block_button {
+    font-size: 12px;
+    padding: 10px 30px;
+  }
+}

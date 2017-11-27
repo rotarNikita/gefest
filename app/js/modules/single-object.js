@@ -56,9 +56,23 @@
             video = videoWrapper.getElementsByTagName('video')[0],
             playButton = videoWrapper.querySelector('.play-button');
 
-        if (video.readyState >= 4) videoLoaded();
-        else video.addEventListener('canplaythrough', videoLoaded);
+        if (navigator.userAgent.indexOf('Safari') === -1 || navigator.userAgent.indexOf('Chrome') !== -1) {
+            if (video.readyState >= 4) videoLoaded();
+            else video.addEventListener('canplaythrough', videoLoaded);
+        } else {
+            video.setAttribute('controls', true);
+            video.setAttribute('autoplay', true);
 
+            var customStyle = document.createElement('style');
+            customStyle.innerHTML = '.single-object_video_wrapper:after {' +
+                'content: none;' +
+                '}' +
+                '.single-object_video_center {' +
+                'display: none;' +
+                '}';
+
+            videoWrapper.appendChild(customStyle);
+        }
 
         function videoLoaded () {
             playButton.addEventListener('mousedown', function () {
@@ -88,16 +102,26 @@
         }
 
         // svg choose stage
-        var svgStageItems = document.querySelectorAll('.single-object_choose_svg_group');
+        var svgStageItems = document.querySelectorAll('.single-object_choose_svg_group'),
+            mediaQuery = false,
+            deltaAnimationMobile = 500,
+            intervalAnimationMobile = 4000;
 
-        Array.prototype.forEach.call(svgStageItems, function (svgStageItem) {
+        svgChooseResize();
+        window.addEventListener('resize', svgChooseResize);
+
+        function svgChooseResize () {
+            mediaQuery = window.matchMedia('(max-width: 1201px)').matches;
+        }
+
+        Array.prototype.forEach.call(svgStageItems, function (svgStageItem, svgStageItemIndex) {
             var path = svgStageItem.querySelector('.single-object_choose_svg_path'),
                 text = svgStageItem.querySelector('.single-object_choose_svg_description'),
                 href = svgStageItem.dataset.href,
                 textHover = false,
                 hover = false;
 
-            path.addEventListener('mouseover', function () {
+            path.addEventListener('mouseenter', function () {
                 show();
             });
 
@@ -109,7 +133,7 @@
                 }, 0);
             });
 
-            text.addEventListener('mouseover', function () {
+            text.addEventListener('mouseenter', function () {
                 textHover = true
             });
 
@@ -122,12 +146,23 @@
                if (hover) window.location = href;
             });
 
+            if (mediaQuery) {
+                setInterval(function () {
+                    show();
+                    setTimeout(hide, deltaAnimationMobile + svgStageItemIndex * deltaAnimationMobile)
+                }, intervalAnimationMobile + svgStageItemIndex * deltaAnimationMobile);
+
+                text.children[0].setAttribute('d', 'M 169 378 h 192 v 45 l 10 10 l -10 10 v 45 h -192 Z');
+            }
+
             function show () {
                 hover = true;
                 path.classList.add('hover');
 
-                text.style.display = 'block';
-                text.classList.add('hover');
+                if (!mediaQuery) {
+                    text.style.display = 'block';
+                    text.classList.add('hover');
+                }
             }
 
             var hideTimeout;
@@ -135,11 +170,13 @@
                 hover = false;
                 path.classList.remove('hover');
 
-                text.classList.remove('hover');
-                clearTimeout(hideTimeout);
-                hideTimeout = setTimeout(function () {
-                    if (!hover) text.style.display = 'none';
-                }, 300)
+                if (!mediaQuery) {
+                    text.classList.remove('hover');
+                    clearTimeout(hideTimeout);
+                    hideTimeout = setTimeout(function () {
+                        if (!hover) text.style.display = 'none';
+                    }, 300)
+                }
             }
         })
     }

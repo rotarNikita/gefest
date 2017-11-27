@@ -52,3 +52,26 @@
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 1200px) {
+  .single-object_choose .find-cost-block {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+  .single-object_choose_text {
+    display: none;
+  }
+  .single-object_choose_svg_description {
+    display: block!important;
+    opacity: 1;
+  }
+  .single-object_choose_svg_description text {
+    font-size: 24px;
+  }
+  .single-object_choose_svg_description text .stage {
+    font-size: 26px;
+  }
+}
