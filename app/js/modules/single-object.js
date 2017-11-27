@@ -143,15 +143,19 @@
             });
 
             svgStageItem.addEventListener('click', function () {
-               if (hover) window.location = href;
+               if (hover || mediaQuery) window.location = href;
             });
 
             if (mediaQuery) {
                 setInterval(function () {
-                    show();
-                    setTimeout(hide, deltaAnimationMobile + svgStageItemIndex * deltaAnimationMobile)
+                    path.classList.add('hover');
+                    if (!hover) setTimeout(function () {
+                        path.classList.remove('hover');
+                    }, deltaAnimationMobile + svgStageItemIndex * deltaAnimationMobile)
+
                 }, intervalAnimationMobile + svgStageItemIndex * deltaAnimationMobile);
 
+                // custom pathes and styles
                 text.children[0].setAttribute('d', 'M 169 378 h 192 v 45 l 10 10 l -10 10 v 45 h -192 Z');
                 text.children[1].setAttribute('style', 'font-size: 24px;');
                 text.children[1].children[0].setAttribute('style', 'font-size: 26px;');
