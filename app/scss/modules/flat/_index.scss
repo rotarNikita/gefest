@@ -30,4 +30,15 @@
   }
 }
 
+@media (max-width: 768px) {
+  .flat_title .header_nav_like {
+    display: block;
+    float: none;
+    margin: 20px auto;
+  }
+  .flat_title .block-title {
+    float: none;
+  }
+}
+
 @import "flat-description";
