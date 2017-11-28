@@ -99,3 +99,40 @@
     padding-bottom: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .select-apartment_form_range .from, .select-apartment_form_range .to {
+    width: 55px;
+  }
+  .select-apartment_form_range .range {
+    width: 140px;
+  }
+  .select-apartment_form_range {
+    margin: 0 0 30px 0;
+  }
+  .select-apartment_form {
+    padding: 0;
+  }
+  .select-apartment_form_info_text {
+    font-size: 18px;
+    .red {
+      font-size: 22px;
+    }
+  }
+  .select-apartment_form_submit {
+    font-size: 12px;
+    padding: 10px 30px;
+  }
+  .select-apartment_form_info {
+    height: 100px;
+  }
+}
+
+@media (max-width: 450px) {
+  .select-apartment_form_info_text {
+    display: none;
+  }
+  .select-apartment_form_info {
+    justify-content: center;
+  }
+}
