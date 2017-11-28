@@ -5,9 +5,9 @@ form.select-apartment_form
     .select-apartment_form_range_wrapper
         .select-apartment_form_range
             .select-apartment_form_range_label Площадь квартиры, м2
-            input(type='text' readonly).from
+            input(type='text' min='0' max='120' readonly).from
             .range
-            input(type='text' readonly).to
+            input(type='text' min='0' max='120' readonly).to
     .select-apartment_form_info
         .select-apartment_form_info_text.
             <span class="red">102 квартиры</span> в продаже соотвествуют выбранным условиям
