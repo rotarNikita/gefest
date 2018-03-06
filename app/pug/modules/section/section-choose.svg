@@ -1,13 +1,33 @@
 <svg class="section_choose" width="1233" xmlns="http://www.w3.org/2000/svg" version="1.1"
-     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1233 1281">
+     xmlns:xlink="http://www.w3.org/1999/xlink">
 
-    <image class="section_choose_main-image" xlink:href="img/section/section-a.png" x="0" y="0" width="1233" height="1281" />
+    <image class="section_choose_main-image" xlink:href="img/section/section-a.png" x="0" y="0" />
 
     <g class="section_choose_flat" data-href="/flat.html">
-        <path class="section_choose_path color-1" d="M 168 78 h 156 v 67 h 19 v 273 h 60 v 78 h -274 v -33 h -68 v -320 h 107 z" />
+        <path class="section_choose_path" d="M 168 78 h 156 v 67 h 19 v 273 h 60 v 78 h -274 v -33 h -68 v -320 h 107 z" fill="rgba(254, 235, 254, 0.8)" />
         <text class="section_choose_description" transform="translate(78 266)" x="0" y="0">
             <tspan x="0" dy="1.2em">1-комнатная квартира</tspan>
             <tspan x="73" dy="1.2em">48,10 м2</tspan>
         </text>
+    </g>
+
+    <g class="section_choose_flat" data-href="/flat.html">
+        <path class="section_choose_path" d="M341.3148788927336 147.315 L326.38235294117646 147.315 L326.38235294117646 78.995 L627.166089965398 78.995 L627.166089965398 465.43 L477.84083044982697 465.43 L477.84083044982697 418.46 L341.3148788927336 418.46 Z" fill="rgba(255,0,0,0.4)" />
+        <text class="section_choose_description" transform="translate(437.30968858131484 224.17499999999998)" x="0" y="0">
+            <tspan x="0" dy="1.2em">ghjkl</tspan>
+            <tspan x="16.957416468425606" dy="1.2em">sdf</tspan>
+        </text>
+    </g>
+
+    <g class="section_choose_flat" data-href="/flat.html">
+        <path class="section_choose_path" d="M834.0882352941177 78.995 L1211.667820069204 78.995 L1211.667820069204 636.23 L1073.008650519031 636.23 L1073.008650519031 548.695 L987.6799307958477 548.695 L987.6799307958477 463.295 L834.0882352941177 463.295 Z" fill="rgba(0,12,249,0.4)" />
+        <text class="section_choose_description" transform="translate(945.0155709342561 269.67837793998376)" x="0" y="0">
+            <tspan x="0" dy="1.2em">erdtfyghsfhjgdhf</tspan>
+            <tspan x="29.923723861007954" dy="1.2em">fsrdgthfyg</tspan>
+        </text>
+    </g>
+
+    <g class="section_choose_flat" data-href="/flat.html">
+        <path class="section_choose_path" d="M59.73010380622837 638.365 L629.2993079584776 638.365 L629.2993079584776 736.5749999999999 L334.9152249134948 736.5749999999999 L334.9152249134948 815.57 L59.73010380622837 815.57 Z" fill="rgba(0,255,213,0.4)" /><text class="section_choose_description" transform="translate(174.92387543252596 720.1633779399838)" x="0" y="0"><tspan x="0" dy="1.2em" color="red">продано</tspan></text>
     </g>
 </svg>
