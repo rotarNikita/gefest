@@ -22,6 +22,20 @@
         var interval = 4000,
             duration = interval / flats.length;
 
+        var intervals = [];
+
+        function clearAllIntervals () {
+            intervals.forEach(function (interval) {
+                interval.stop()
+            })
+        }
+
+        function startAllIntervals () {
+            intervals.forEach(function (interval) {
+                interval.start()
+            })
+        }
+
         Array.prototype.forEach.call(flats, function (flat, flatIndex) {
             var flatPath = flat.querySelector('.section_choose_path');
             var fillColor = flatPath.getAttribute('fill');
@@ -30,9 +44,14 @@
                 window.location = this.dataset.href;
             });
 
-            flat.addEventListener('mouseenter', hover);
-
-            flat.addEventListener('mouseleave', unHover);
+            flat.addEventListener('mouseenter', function () {
+                hover();
+                clearAllIntervals();
+            });
+            flat.addEventListener('mouseleave', function () {
+                unHover();
+                startAllIntervals();
+            });
 
             function hover () {
                 flat.classList.add('hover');
@@ -44,15 +63,29 @@
                 flatPath.style.fill = 'transparent';
             }
 
-            setTimeout(function () {
-                setInterval(function () {
-                    hover();
+            var animationInterval = null;
 
-                    setTimeout(function () {
-                        unHover();
-                    }, duration);
-                }, interval)
-            }, duration * flatIndex);
-        })
+            var animation = {
+                start: function () {
+                    animationInterval = setTimeout(function () {
+                        animationInterval = setInterval(function () {
+                            hover();
+
+                            setTimeout(function () {
+                                unHover();
+                            }, duration);
+                        }, interval)
+                    }, duration * flatIndex);
+                },
+                stop: function () {
+                    clearInterval(animationInterval);
+                    clearTimeout(animationInterval);
+                }
+            };
+
+            intervals.push(animation);
+        });
+
+        startAllIntervals();
     }
 }();
