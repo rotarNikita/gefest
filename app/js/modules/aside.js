@@ -89,7 +89,6 @@
             navItemsActive.classList.remove('active');
             navItem.classList.add('active');
 
-            console.log(checkActiveLiMedia);
             if (checkActiveLiMedia) {
                 var newTop =  navItem.offsetTop + navItem.offsetHeight / 2;
 

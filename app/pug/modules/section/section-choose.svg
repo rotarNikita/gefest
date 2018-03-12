@@ -30,4 +30,8 @@
     <g class="section_choose_flat" data-href="/flat.html">
         <path class="section_choose_path" d="M59.73010380622837 638.365 L629.2993079584776 638.365 L629.2993079584776 736.5749999999999 L334.9152249134948 736.5749999999999 L334.9152249134948 815.57 L59.73010380622837 815.57 Z" fill="rgba(0,255,213,0.4)" /><text class="section_choose_description" transform="translate(174.92387543252596 720.1633779399838)" x="0" y="0"><tspan x="0" color="red">продано</tspan></text>
     </g>
+
+    <g class="section_choose_flat" data-href="/flat.html">
+        <path class="section_choose_path" d="M68.26297577854672 815.57 L332.78200692041526 815.57 L332.78200692041526 734.44 L396.7785467128028 734.44 L396.7785467128028 815.57 L484.24048442906576 815.57 L484.24048442906576 1199.8699999999997 L234.65397923875432 1199.8699999999997 L234.65397923875432 1127.28 L68.26297577854672 1127.28 Z" fill="rgba(18,0,255,0.4)" /><text class="section_choose_description" transform="translate(221.85467128027682 969.9583779399837)" x="0" y="0"><tspan x="0" fill="red">продано</tspan></text>
+    </g>
 </svg>

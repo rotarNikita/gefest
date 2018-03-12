@@ -102,10 +102,41 @@
         }
 
         // svg choose stage
+        var svg = document.querySelectorAll('.single-object_choose_svg');
+
+        if (svg.length) {
+            Array.prototype.forEach.call(svg, function (item) {
+                var image = item.querySelector('.single-object_choose_svg_main-image');
+                var img = new Image();
+
+                img.addEventListener('load', function () {
+                    image.setAttribute('width', img.naturalWidth + '');
+                    image.setAttribute('height', img.naturalHeight + '');
+
+                    item.setAttribute('viewBox', '0 0 ' + img.naturalWidth + ' ' + img.naturalHeight);
+                });
+
+                img.src = image.href.baseVal;
+            })
+        }
+
         var svgStageItems = document.querySelectorAll('.single-object_choose_svg_group'),
             mediaQuery = false,
-            deltaAnimationMobile = 500,
-            intervalAnimationMobile = 4000;
+            intervalAnimationMobile = 4000,
+            deltaAnimationMobile = intervalAnimationMobile / svgStageItems.length,
+            intervals = [];
+
+        intervals.stopAll = function () {
+            intervals.forEach(function (interval) {
+                interval.stop();
+            })
+        };
+
+        intervals.startAll = function () {
+            intervals.forEach(function (interval) {
+                interval.start();
+            })
+        };
 
         svgChooseResize();
         window.addEventListener('resize', svgChooseResize);
@@ -116,6 +147,7 @@
 
         Array.prototype.forEach.call(svgStageItems, function (svgStageItem, svgStageItemIndex) {
             var path = svgStageItem.querySelector('.single-object_choose_svg_path'),
+                pathColor = path.getAttribute('fill'),
                 text = svgStageItem.querySelector('.single-object_choose_svg_description'),
                 href = svgStageItem.dataset.href,
                 textHover = false,
@@ -134,7 +166,7 @@
             });
 
             text.addEventListener('mouseenter', function () {
-                textHover = true
+                textHover = true;
             });
 
             text.addEventListener('mouseleave', function () {
@@ -146,24 +178,19 @@
                if (hover || mediaQuery) window.location = href;
             });
 
-            if (mediaQuery) {
-                setInterval(function () {
-                    path.classList.add('hover');
-                    if (!hover) setTimeout(function () {
-                        path.classList.remove('hover');
-                    }, deltaAnimationMobile)
+            svgStageItem.addEventListener('mouseenter', function () {
+                intervals.stopAll();
+                clearTimeout(thisTimeout);
+            });
 
-                }, intervalAnimationMobile + svgStageItemIndex * deltaAnimationMobile);
-
-                // custom pathes and styles
-                text.children[0].setAttribute('d', 'M 169 378 h 192 v 45 l 10 10 l -10 10 v 45 h -192 Z');
-                text.children[1].setAttribute('style', 'font-size: 24px;');
-                text.children[1].children[0].setAttribute('style', 'font-size: 26px;');
-            }
+            svgStageItem.addEventListener('mouseleave', function () {
+                intervals.startAll();
+            });
 
             function show () {
                 hover = true;
                 path.classList.add('hover');
+                path.style.fill = pathColor;
 
                 if (!mediaQuery) {
                     text.style.display = 'block';
@@ -171,10 +198,11 @@
                 }
             }
 
-            var hideTimeout;
+            var hideTimeout = null;
             function hide () {
                 hover = false;
                 path.classList.remove('hover');
+                path.style.fill = 'transparent';
 
                 if (!mediaQuery) {
                     text.classList.remove('hover');
@@ -184,6 +212,29 @@
                     }, 300)
                 }
             }
-        })
+
+
+            var thisInterval = null;
+            var thisTimeout = null;
+            var interval = {
+                start: function () {
+                    thisInterval = setTimeout(function () {
+                        thisInterval = setInterval(function () {
+                            show();
+
+                            thisTimeout = setTimeout(hide, deltaAnimationMobile);
+                        }, intervalAnimationMobile)
+                    }, svgStageItemIndex * deltaAnimationMobile);
+                },
+                stop: function () {
+                    clearInterval(thisInterval);
+                    clearTimeout(thisInterval);
+                }
+            };
+
+            intervals.push(interval);
+        });
+
+        intervals.startAll();
     }
 }();

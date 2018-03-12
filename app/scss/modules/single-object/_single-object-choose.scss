@@ -13,7 +13,7 @@
     }
     &_description {
       opacity: 0;
-      cursor: default;
+      cursor: pointer;
       display: none;
       transition: opacity .3s;
       path {

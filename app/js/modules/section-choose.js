@@ -47,6 +47,7 @@
             flat.addEventListener('mouseenter', function () {
                 hover();
                 clearAllIntervals();
+                clearTimeout(animationTimeout);
             });
             flat.addEventListener('mouseleave', function () {
                 unHover();
@@ -64,6 +65,7 @@
             }
 
             var animationInterval = null;
+            var animationTimeout = null;
 
             var animation = {
                 start: function () {
@@ -71,11 +73,11 @@
                         animationInterval = setInterval(function () {
                             hover();
 
-                            setTimeout(function () {
-                                unHover();
-                            }, duration);
+                            animationTimeout = setTimeout(function () {
+                                unHover()
+                            }, duration)
                         }, interval)
-                    }, duration * flatIndex);
+                    }, duration * flatIndex)
                 },
                 stop: function () {
                     clearInterval(animationInterval);
