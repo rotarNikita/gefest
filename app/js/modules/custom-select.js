@@ -5,8 +5,17 @@
         Array.prototype.forEach.call(customSelectWrappers, function (customSelectWrapper) {
             var selectInput = customSelectWrapper.querySelector('.section_select_input input'),
                 selectValue = customSelectWrapper.querySelector('.section_select_input .value'),
-                options = customSelectWrapper.querySelectorAll('.section_select_dropdown li'),
+                dropdown = customSelectWrapper.querySelector('.section_select_dropdown'),
+                options = dropdown.querySelectorAll('li'),
                 optionsHeight = 0;
+
+            if (dropdown.dataset.value) {
+                var currentLi = dropdown.querySelector('li[data-value="' + dropdown.dataset.value + '"]');
+
+                currentLi.classList.add('active');
+                selectValue.innerHTML = currentLi.innerHTML;
+                selectInput.value = currentLi.innerHTML;
+            }
 
             Array.prototype.forEach.call(options, function (option) {
                 optionsHeight += option.offsetHeight;
@@ -16,6 +25,7 @@
 
                     selectValue.innerHTML = value;
                     selectInput.value = value;
+                    dropdown.dataset.value = this.dataset.value;
 
                     var selectedOption = customSelectWrapper.querySelector('.section_select_dropdown li.active');
 

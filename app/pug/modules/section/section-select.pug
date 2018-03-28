@@ -7,9 +7,9 @@
                         input(type='text' value='Выберите жилой комплекс')
                         .value Выберите жилой комплекс
                         .arrow
-                    ul.section_select_dropdown
+                    ul.section_select_dropdown(data-value=Math.round(Math.random() * 4 * val) - 1)
                         - for (var i = 0; i < val; i++)
-                            li Акрополь
-                            li Милос
-                            li Родос
-                            li Корфу
+                            li(data-value=0 * (i + 1)) Акрополь
+                            li(data-value=1 * (i + 1)) Милос
+                            li(data-value=2 * (i + 1)) Родос
+                            li(data-value=3 * (i + 1)) Корфу
