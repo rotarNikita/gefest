@@ -40,53 +40,61 @@
             Array.prototype.forEach.call(flats, function (flat, flatIndex) {
                 var flatPath = flat.querySelector('.section_choose_path');
                 var fillColor = flatPath.getAttribute('fill');
+                var isActive = flat.classList.contains('active');
 
-                flat.addEventListener('click', function () {
-                    window.location = this.dataset.href;
-                });
+                if (!isActive) {
+                    flat.addEventListener('click', function () {
+                        window.location = this.dataset.href;
+                    });
 
-                flat.addEventListener('mouseenter', function () {
-                    hover();
-                    clearAllIntervals();
-                    clearTimeout(animationTimeout);
-                });
-                flat.addEventListener('mouseleave', function () {
-                    unHover();
-                    startAllIntervals();
-                });
+                    flat.addEventListener('mouseenter', function () {
+                        hover();
+                        clearAllIntervals();
+                        clearTimeout(animationTimeout);
+                    });
+                    flat.addEventListener('mouseleave', function () {
+                        unHover();
+                        startAllIntervals();
+                    });
 
-                function hover () {
+                    function hover () {
+                        flat.classList.add('hover');
+                        flatPath.style.fill = fillColor;
+                    }
+
+                    function unHover () {
+                        flat.classList.remove('hover');
+                        flatPath.style.fill = 'transparent';
+                    }
+
+                    var animationInterval = null;
+                    var animationTimeout = null;
+
+                    var animation = {
+                        start: function () {
+                            animationInterval = setTimeout(function () {
+                                animationInterval = setInterval(function () {
+                                    hover();
+
+                                    animationTimeout = setTimeout(function () {
+                                        unHover()
+                                    }, duration)
+                                }, interval)
+                            }, duration * flatIndex)
+                        },
+                        stop: function () {
+                            clearInterval(animationInterval);
+                            clearTimeout(animationInterval);
+                        }
+                    };
+
+                    intervals.push(animation);
+                } else {
                     flat.classList.add('hover');
                     flatPath.style.fill = fillColor;
+                    flatPath.style.stroke = fillColor.replace('0.8', '1');
+                    flatPath.style.strokeWidth = '5';
                 }
-
-                function unHover () {
-                    flat.classList.remove('hover');
-                    flatPath.style.fill = 'transparent';
-                }
-
-                var animationInterval = null;
-                var animationTimeout = null;
-
-                var animation = {
-                    start: function () {
-                        animationInterval = setTimeout(function () {
-                            animationInterval = setInterval(function () {
-                                hover();
-
-                                animationTimeout = setTimeout(function () {
-                                    unHover()
-                                }, duration)
-                            }, interval)
-                        }, duration * flatIndex)
-                    },
-                    stop: function () {
-                        clearInterval(animationInterval);
-                        clearTimeout(animationInterval);
-                    }
-                };
-
-                intervals.push(animation);
             });
 
             startAllIntervals();
