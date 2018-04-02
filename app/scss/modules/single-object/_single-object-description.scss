@@ -17,8 +17,10 @@
   &_map {
     width: 50%;
     display: block;
+    iframe {
+      width: 100%;
+    }
   }
-
 }
 
 #single-object-description-map-path {
