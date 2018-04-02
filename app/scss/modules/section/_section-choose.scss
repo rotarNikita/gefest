@@ -7,10 +7,21 @@
         opacity: 1;
       }
     }
+    &.sold {
+      .section_choose_sold {
+        display: block;
+      }
+      tspan:not(.section_choose_sold) {
+        display: none;
+      }
+    }
   }
   &_path {
     fill: transparent;
     transition: fill .3s;
+  }
+  &_sold {
+    display: none;
   }
   &_description {
     font-size: 22px;
