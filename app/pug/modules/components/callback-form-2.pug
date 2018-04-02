@@ -1,0 +1,9 @@
+include button
+
+.callback-form.small#callback-form-2
+    form
+        .row
+            .col-md-12.col-sm-12.col-xs-12
+                input.callback-form_input(type='text' name='name' placeholder='ФИО' )
+                input.callback-form_input(type='tel' name='phone' placeholder='Номер телефона')
+        +button('узнать', 'input')(type='submit' class='callback-form_button')
