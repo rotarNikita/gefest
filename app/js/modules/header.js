@@ -5,7 +5,11 @@
         if (header) {
             var languagesMobile = header.querySelector('.header_info_lang_m'),
                 burger = header.querySelector('.header_burger'),
-                headerMenu = header.querySelector('.header_nav');
+                headerMenu = header.querySelector('.header_nav'),
+                phonesMobile = header.querySelector('.header_info_contacts_m'),
+                phonesMobileIcon = phonesMobile.querySelector('.header_info_contacts_m_icon'),
+                phonesMobileDropdown = phonesMobile.querySelector('.header_info_contacts_m_dropdown');
+
 
             headerResize();
             window.addEventListener('resize', headerResize);
@@ -16,6 +20,15 @@
                 headerUnmobile();
 
                 if (mq) headerMobile();
+            }
+
+            function phonesMobileToggle (event) {
+                event.stopPropagation();
+                phonesMobileDropdown.classList.toggle('open');
+            }
+
+            function phonesMobileClose (event) {
+                phonesMobileDropdown.classList.remove('open');
             }
 
             function languagesToggle (event) {
@@ -38,7 +51,9 @@
                 document.body.style.marginTop = bodyMarginTop + 'px';
 
                 languagesMobile.addEventListener('click', languagesToggle);
+                phonesMobileIcon.addEventListener('click', phonesMobileToggle);
                 document.body.addEventListener('click', languagesClose);
+                document.body.addEventListener('click', phonesMobileClose);
                 burger.addEventListener('click', menuOpenToggle);
             }
 
@@ -47,6 +62,8 @@
                 header.classList.remove('fixed');
 
                 languagesMobile.removeEventListener('click', languagesToggle);
+                phonesMobileIcon.removeEventListener('click', phonesMobileToggle);
+                document.body.removeEventListener('click', phonesMobileClose);
                 document.body.removeEventListener('click', languagesClose);
                 burger.removeEventListener('click', menuOpenToggle);
             }
