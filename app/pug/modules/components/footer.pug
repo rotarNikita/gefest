@@ -1,3 +1,15 @@
+-
+    const mapData = [
+        {
+            coordinates: '46.44851,30.740871999999968',
+            marker: 'http://compgef.ststs.xyz/content/uploads/2018/04/maker.png'
+        },
+        {
+            coordinates: '46.45252000000001,30.764576000000034',
+            marker: 'http://compgef.ststs.xyz/content/uploads/2018/04/maker.png'
+        }
+    ]
+
 footer.footer
     .footer_title_m
         .container
@@ -7,8 +19,8 @@ footer.footer
         .footer_map_contacts
             h2.block-title Контакты
             .footer_map_contacts_slider
-                each val in [1, 2]
-                    .footer_map_contacts_slide
+                each val in mapData
+                    .footer_map_contacts_slide(data-mapcoordinates=val.coordinates data-markericon=val.marker)
                         .footer_map_contacts_subtitle Центральный отдел продаж:
                         .footer_map_contacts_address пер. Красный, 14
                         .footer_map_contacts_phone +38 (048) 780-55-55

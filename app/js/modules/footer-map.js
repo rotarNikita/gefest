@@ -4,6 +4,17 @@
 
         if (footer) {
             var mapScript = document.createElement('script');
+            var slides = document.querySelectorAll('.footer_map_contacts_slide');
+            var markers = [];
+
+            Array.prototype.forEach.call(slides, function (slide) {
+                var marker = {};
+
+                marker.coordinates = slide.dataset.mapcoordinates.split(',');
+                marker.icon = slide.dataset.markericon;
+
+                markers.push(marker);
+            });
 
             mapScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAG8sutyHg4ISwG95Fg4iEOzvlkE6yecE8');
             mapScript.setAttribute('async', 'async');
@@ -23,28 +34,34 @@
                     disableDefaultUI: true
                 });
 
-                var MARKER_ICON = {
-                    url: '../img/components/footer/maker.png',
-                    size: new google.maps.Size(512, 444),
-                    scaledSize: new google.maps.Size(51, 44),
-                    origin: new google.maps.Point(0, 0),
-                    anchor: new google.maps.Point(25, 22)
-                };
+                var MAX_ICON_WIDTH = 50;
 
-                var dataMarkers = [
-                    [46.461445, 30.712205],
-                    [46.473367, 30.740436],
-                    [46.448598, 30.741259]
-                ];
+                markers.forEach(function (marker) {
+                    var icon = new Image();
 
-                var markers = [];
+                    icon.addEventListener('load', function () {
+                        var iconWidth = icon.naturalWidth;
+                        var iconHeight = icon.naturalHeight;
+                        var k = 1;
 
-                dataMarkers.forEach(function (dataMarker, i) {
-                    markers[i] = new google.maps.Marker({
-                        icon: MARKER_ICON,
-                        position: {lat: dataMarker[0], lng: dataMarker[1]},
-                        map: map
+                        if (iconWidth > MAX_ICON_WIDTH) {
+                            k = MAX_ICON_WIDTH / iconWidth;
+                        }
+
+                        new google.maps.Marker({
+                            icon: {
+                                url: marker.icon,
+                                size: new google.maps.Size(iconWidth, iconHeight),
+                                scaledSize: new google.maps.Size(iconWidth * k, iconHeight * k),
+                                origin: new google.maps.Point(0, 0),
+                                anchor: new google.maps.Point(iconWidth * k / 2, iconHeight * k / 2)
+                            },
+                            position: {lat: +marker.coordinates[0], lng: +marker.coordinates[1]},
+                            map: map
+                        });
                     });
+
+                    icon.src = marker.icon;
                 });
 
                 // mobile map
