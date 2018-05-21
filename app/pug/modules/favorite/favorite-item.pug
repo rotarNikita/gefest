@@ -1,35 +1,38 @@
 .favorite_item
     .favorite_item_photo(style='background-image: url(img/flat/flat-photo.png)')
     .favorite_item_info
-        .favorite_item_info_top.clearfix
-            .favorite_item_info_top_left
+        .favorite_item_info_section.clearfix
+            .favorite_item_info_left
                 .jk ЖК «РОДОС»
-                .flat 2х - комнатная квартира
-            .favorite_item_info_top_right
-                .stage 7-й этаж
-                .section СЕКЦИЯ А
+                .favorite_item_info_square СЕКЦИЯ А
+            .favorite_item_info_right
+                .favorite_item_info_square.status.sale Продается
+                br
+                .favorite_item_info_square.status.price 31 000,00
         img.favorite_item_photo_m(src='/img/flat/flat-photo.png' alt='')
-        ul.favorite_item_info_space
+        ul.favorite_item_info_section.grid
             -
                 var spaceData = [
                     {
+                        text: 'Тип',
+                        number: 'Двухкомнатная квартира'
+                    }, {
                         text: 'Общая площадь',
-                        number: '64,24 м2'
+                        number: '750 кв.м.'
                     }, {
-                        text: 'Жилая',
-                        number: '44,9 м2'
+                        text: 'Этаж',
+                        number: '0'
                     }, {
-                        text: 'Кухня',
-                        number: '15,7 м2'
-                    }, {
-                        text: 'Санузел',
-                        number: '9,7 м2'
+                        text: 'Номер',
+                        number: '5'
                     }
                 ]
-            each item in spaceData
-                li.favorite_item_info_space_item
-                    .text= item.text
-                    .number= item.number
+            each item, i in spaceData
+                li(class=i === 0 ? 'w100' : '')
+                    .type= item.text
+                    .favorite_item_info_square(class=i === 0 ? 'wide' : '')= item.number
+        .favorite_item_info_section.description
+            p Спецпредложение!!! Только до 31 декабря
         .favorite_item_info_address
             |Фонтанская дор., 25
             br
