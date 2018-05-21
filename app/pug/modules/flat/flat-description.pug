@@ -3,31 +3,27 @@
         .col-md-6
             img.flat_description_photo(src='img/flat/flat-photo.png' alt='')
         .col-md-6
+            .flat_description_labels
+                .favorite_item_info_square.status.price 31 000,00
+                .favorite_item_info_square.status.sale Продается
             .flat_description_char
-                .title Квартира 2-х комнатная
                 -
                     var descriptionData = [
                         {
+                            text: 'Секция',
+                            number: 'B'
+                        }, {
+                            text: 'Этаж',
+                            number: '0'
+                        }, {
+                            text: 'Номер',
+                            number: '5'
+                        }, {
+                            text: 'Тип',
+                            number: 'Двухкомнатная'
+                        }, {
                             text: 'Общая площадь',
-                            number: '75,90 м2'
-                        }, {
-                            text: 'Жилая площадь',
-                            number: '73,49 м2'
-                        }, {
-                            text: 'Кухня',
-                            number: '17,46 м2'
-                        }, {
-                            text: 'Прочая',
-                            number: '20,90 м2'
-                        }, {
-                            text: 'Количество санузлов',
-                            number: '2'
-                        }, {
-                            text: 'Санузел 1',
-                            number: '2,01 м2'
-                        }, {
-                            text: 'Санузел 2',
-                            number: '5,78 м2'
+                            number: '750  кв. м.'
                         }
                     ]
                 ul
@@ -35,3 +31,5 @@
                         li.flat_description_char_item
                             .text= item.text
                             .number= item.number
+                .flat_description_char_text
+                    p Спецпредложение!!! Только до 31 декабря

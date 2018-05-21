@@ -12,8 +12,11 @@
     font-weight: 700;
   }
   &_button {
-    border-radius: 10px;
+    border-radius: 0;
     background-color: #0f1f43;
+    height: 110px;
+    width: 310px;
+    max-width: 100%;
     &:hover {
       color: #0f1f43;
     }
@@ -62,5 +65,10 @@
   .find-cost-block_button {
     font-size: 12px;
     padding: 10px 30px;
+  }
+  .find-cost-block_button {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
   }
 }
