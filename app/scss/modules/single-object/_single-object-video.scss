@@ -1,4 +1,9 @@
 .single-object_video {
+  iframe {
+    display: block;
+    width: 100%;
+    height: 50vw;
+  }
   &_wrapper {
     position: relative;
     overflow: hidden;
