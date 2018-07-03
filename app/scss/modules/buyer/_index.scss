@@ -2,6 +2,12 @@
   .flat_find-cost-block > .container {
     justify-content: space-around;
   }
+  .find-cost-block_button {
+    width: 260px;
+    @media (max-width: 768px) {
+      width: auto;
+    }
+  }
 }
 
 @media (max-width: 768px) {
