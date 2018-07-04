@@ -209,7 +209,8 @@
   &_nav {
     background-color: $backgroundColorNo1;
     &_like {
-      width: 30px;
+      width: 45px;
+      //width: 30px;
       height: 30px;
       background: url("../img/components/header/like_header_nav.png") no-repeat 50% 50%;
       background-size: contain;
@@ -218,7 +219,7 @@
       border: none;
       transition: all .3s;
       margin-left: 5px;
-      &.active {
+      &.in_list {
         background-image: url("../img/components/header/like_header_nav_active.png");
       }
     }
