@@ -44,7 +44,7 @@
 
                 if (!isActive) {
                     flat.addEventListener('click', function () {
-                        window.location = this.dataset.href;
+                        window.open(this.dataset.href)
                     });
 
                     flat.addEventListener('mouseenter', function () {

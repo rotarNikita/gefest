@@ -176,7 +176,7 @@
                 });
 
                 svgStageItem.addEventListener('click', function () {
-                   if (hover || mediaQuery) window.location = href;
+                   if (hover || mediaQuery) window.open(href);
                 });
 
                 svgStageItem.addEventListener('mouseenter', function () {
