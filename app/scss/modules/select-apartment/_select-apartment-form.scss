@@ -85,13 +85,24 @@
       }
     }
   }
-  &_submit {
+  &_button-wrapper {
+    text-align: center;
+  }
+  &_submit, &_reset {
     border: 2px solid $mainColorNo1;
     padding-top: 16px;
     background-color: #ffffff;
     color: $mainColorNo1;
     &:hover {
       background-color: $mainColorNo1;
+      color: #fff;
+    }
+  }
+  &_reset {
+    border-color: #a5a1a2;
+    color: #a5a1a2;
+    &:hover {
+      background-color: #a5a1a2;
       color: #fff;
     }
   }
@@ -119,7 +130,7 @@
       font-size: 22px;
     }
   }
-  .select-apartment_form_submit {
+  .select-apartment_form_submit, .select-apartment_form_reset {
     font-size: 12px;
     padding: 10px 30px;
   }
@@ -129,6 +140,10 @@
 }
 
 @media (max-width: 450px) {
+  .select-apartment_form_reset {
+    margin-bottom: 10px;
+  }
+
   .select-apartment_form_info_text {
     display: none;
   }

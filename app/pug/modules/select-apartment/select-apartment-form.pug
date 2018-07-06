@@ -10,5 +10,7 @@ form.select-apartment_form
             input(type='text' min='0' max='120' readonly).to
     .select-apartment_form_info
         .select-apartment_form_info_text.
-            <span class="red">102 квартиры</span> в продаже соотвествуют выбранным условиям
-        +button('ПОДОБРАТЬ', 'input')(type='submit' class='select-apartment_form_submit')
+            <span class="red">102 квартиры</span>
+        div.select-apartment_form_button-wrapper
+            +button('сбросить', 'a')(href='#' class='select-apartment_form_reset')
+            +button('ПОДОБРАТЬ', 'input')(type='submit' class='select-apartment_form_submit')
