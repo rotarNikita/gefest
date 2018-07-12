@@ -77,21 +77,6 @@
             })
         }
 
-        // footer
-        var footerSlider = $('.footer_map_contacts_slider');
-
-        if (footerSlider.length) {
-            footerSlider.slick({
-                adaptiveHeight: true,
-                nextArrow: $('.footer_map_contacts .slick-arrow.slick-next'),
-                prevArrow: $('.footer_map_contacts .slick-arrow.slick-prev'),
-                autoplay: true,
-                autoplaySpeed: 3000
-            });
-
-            window.MAP_CONTACT_SLIDER = footerSlider;
-        }
-
         // object page slider
         var objectPageSlider = $('.single-object_slider_slides');
 

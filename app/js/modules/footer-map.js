@@ -4,17 +4,34 @@
 
         if (footer) {
             var mapScript = document.createElement('script');
-            var slides = document.querySelectorAll('.footer_map_contacts_slide');
+            var slides = document.querySelector('.footer_map_contacts_slider').children;
             var markers = [];
 
-            Array.prototype.forEach.call(slides, function (slide) {
+            Array.prototype.forEach.call(slides, function (slide, index) {
                 var marker = {};
 
                 marker.coordinates = slide.dataset.mapcoordinates.split(',');
                 marker.icon = slide.dataset.markericon;
+                marker.index = index;
 
                 markers.push(marker);
             });
+
+            console.log(markers);
+
+            var footerSlider = $('.footer_map_contacts_slider');
+
+            if (footerSlider.length) {
+                footerSlider.slick({
+                    adaptiveHeight: true,
+                    nextArrow: $('.footer_map_contacts .slick-arrow.slick-next'),
+                    prevArrow: $('.footer_map_contacts .slick-arrow.slick-prev'),
+                    autoplay: true,
+                    autoplaySpeed: 3000
+                });
+
+                window.MAP_CONTACT_SLIDER = footerSlider;
+            }
 
             mapScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAG8sutyHg4ISwG95Fg4iEOzvlkE6yecE8');
             mapScript.setAttribute('async', 'async');
@@ -66,29 +83,45 @@
                         });
 
                         google.maps.event.addListener(mapMarker, 'click', function() {
-                            map.setZoom(MAP_ZOOM_MARKER_CLICKED);
+                            // map.setZoom(MAP_ZOOM_MARKER_CLICKED);
+                            //
+                            // setTimeout(function() {
+                            //     map.panTo(mapMarker.getPosition());
+                            // }, 15);
+                            //
+                            // mapMarkers.forEach(function(item) {
+                            //     item.setOpacity(OPACITY_DEFAULT)
+                            // });
+                            //
+                            // mapMarker.setOpacity(1);
+                            //
+                            // console.log(marker);
 
-                            setTimeout(function() {
-                                map.panTo(mapMarker.getPosition());
-                            }, 15);
+                            window.MAP_CONTACT_SLIDER.slick('slickGoTo', marker.index)
+                        });
 
-                            mapMarkers.forEach(function(item) {
-                                item.setOpacity(OPACITY_DEFAULT)
-                            });
+                        window.MAP_CONTACT_SLIDER.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+                            if (marker.index === nextSlide) {
+                                map.setZoom(MAP_ZOOM_MARKER_CLICKED);
 
-                            mapMarker.setOpacity(1);
+                                setTimeout(function() {
+                                    map.panTo(mapMarker.getPosition());
+                                }, 15);
 
-                            window.MAP_CONTACT_SLIDER.slick('slickGoTo', mapMarkers.indexOf(mapMarker))
+                                mapMarkers.forEach(function(item) {
+                                    item.setOpacity(OPACITY_DEFAULT)
+                                });
+
+                                mapMarker.setOpacity(1);
+
+                                console.log(markers[nextSlide]);
+                            }
                         });
 
                         mapMarkers.push(mapMarker)
                     });
 
                     icon.src = marker.icon;
-                });
-
-                window.MAP_CONTACT_SLIDER.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-                    google.maps.event.trigger(mapMarkers[nextSlide], 'click')
                 });
 
                 google.maps.event.addListener(map, 'mouseover', function() {
