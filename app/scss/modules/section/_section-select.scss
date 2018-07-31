@@ -11,6 +11,18 @@ $selectBorder: 1px solid #dcdcdc;
     box-shadow: -4px 3px 19px 1px rgba(0, 0, 0, 0.15);
     position: relative;
     transition: box-shadow .3s;
+    &.disabled {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        background-color: rgba(#ffffff, .7);
+      }
+    }
     &.active {
       box-shadow: none;
       .section_select_input {

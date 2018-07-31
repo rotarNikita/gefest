@@ -53,53 +53,57 @@
             }
 
             // video
-            var videoWrapper = document.querySelector('.single-object_video_wrapper'),
-                video = videoWrapper.getElementsByTagName('video')[0],
-                playButton = videoWrapper.querySelector('.play-button');
+            try {
+                var videoWrapper = document.querySelector('.single-object_video_wrapper'),
+                    video = videoWrapper.getElementsByTagName('video')[0],
+                    playButton = videoWrapper.querySelector('.play-button');
 
-            if (navigator.userAgent.indexOf('Safari') === -1 || navigator.userAgent.indexOf('Chrome') !== -1) {
-                if (video.readyState >= 4) videoLoaded();
-                else video.addEventListener('canplaythrough', videoLoaded);
-            } else {
-                video.setAttribute('controls', true);
-                video.setAttribute('autoplay', true);
+                if (navigator.userAgent.indexOf('Safari') === -1 || navigator.userAgent.indexOf('Chrome') !== -1) {
+                    if (video.readyState >= 4) videoLoaded();
+                    else video.addEventListener('canplaythrough', videoLoaded);
+                } else {
+                    video.setAttribute('controls', true);
+                    video.setAttribute('autoplay', true);
 
-                var customStyle = document.createElement('style');
-                customStyle.innerHTML = '.single-object_video_wrapper:after {' +
-                    'content: none;' +
-                    '}' +
-                    '.single-object_video_center {' +
-                    'display: none;' +
-                    '}';
+                    var customStyle = document.createElement('style');
+                    customStyle.innerHTML = '.single-object_video_wrapper:after {' +
+                        'content: none;' +
+                        '}' +
+                        '.single-object_video_center {' +
+                        'display: none;' +
+                        '}';
 
-                videoWrapper.appendChild(customStyle);
-            }
+                    videoWrapper.appendChild(customStyle);
+                }
 
-            function videoLoaded () {
-                playButton.addEventListener('mousedown', function () {
-                    this.classList.add('mouse-down');
-                });
+                function videoLoaded () {
+                    playButton.addEventListener('mousedown', function () {
+                        this.classList.add('mouse-down');
+                    });
 
-                document.body.addEventListener('mouseup', function () {
-                    playButton.classList.remove('mouse-down');
-                });
+                    document.body.addEventListener('mouseup', function () {
+                        playButton.classList.remove('mouse-down');
+                    });
 
-                playButton.addEventListener('click', function (event) {
-                    event.stopPropagation();
+                    playButton.addEventListener('click', function (event) {
+                        event.stopPropagation();
 
-                    videoWrapper.classList.add('playing');
-                    playButton.classList.remove('mouse-down');
+                        videoWrapper.classList.add('playing');
+                        playButton.classList.remove('mouse-down');
 
-                    video.play();
-                });
+                        video.play();
+                    });
 
-                videoWrapper.addEventListener('click', function () {
-                    this.classList.remove('playing');
+                    videoWrapper.addEventListener('click', function () {
+                        this.classList.remove('playing');
 
-                    video.pause();
-                });
+                        video.pause();
+                    });
 
-                video.addEventListener('ended', videoWrapper.click.bind(videoWrapper));
+                    video.addEventListener('ended', videoWrapper.click.bind(videoWrapper));
+                }
+            } catch (e) {
+                console.error(e)
             }
 
             // svg choose stage
@@ -147,93 +151,99 @@
             }
 
             Array.prototype.forEach.call(svgStageItems, function (svgStageItem, svgStageItemIndex) {
-                var path = svgStageItem.querySelector('.single-object_choose_svg_path'),
-                    pathColor = path.getAttribute('fill'),
-                    text = svgStageItem.querySelector('.single-object_choose_svg_description'),
-                    href = svgStageItem.dataset.href,
-                    textHover = false,
-                    hover = false;
+                try {
+                    var path = svgStageItem.querySelector('.single-object_choose_svg_path'),
+                        pathColor = path.getAttribute('fill'),
+                        text = svgStageItem.querySelector('.single-object_choose_svg_description'),
+                        href = svgStageItem.dataset.href,
+                        textHover = false,
+                        hover = false;
 
-                path.addEventListener('mouseenter', function () {
-                    show();
-                });
+                    path.addEventListener('mouseenter', function () {
+                        show();
+                    });
 
-                path.addEventListener('mouseleave', function () {
-                    setTimeout(function () {
-                        if (!textHover) {
+                    path.addEventListener('mouseleave', function () {
+                        setTimeout(function () {
+                            if (!textHover) {
+                                hide();
+                            }
+                        }, 0);
+                    });
+
+                    if (text) {
+                        text.addEventListener('mouseenter', function () {
+                            textHover = true;
+                        });
+
+                        text.addEventListener('mouseleave', function () {
+                            textHover = false;
                             hide();
+                        });
+                    }
+
+                    svgStageItem.addEventListener('click', function () {
+                        if (hover || mediaQuery) window.open(href);
+                    });
+
+                    svgStageItem.addEventListener('mouseenter', function () {
+                        intervals.stopAll();
+                        clearTimeout(thisTimeout);
+                    });
+
+                    svgStageItem.addEventListener('mouseleave', function () {
+                        intervals.startAll();
+                    });
+
+                    function show () {
+                        hover = true;
+                        path.classList.add('hover');
+                        path.style.fill = pathColor;
+
+                        if (!mediaQuery && text) {
+                            text.style.display = 'block';
+                            text.classList.add('hover');
                         }
-                    }, 0);
-                });
-
-                text.addEventListener('mouseenter', function () {
-                    textHover = true;
-                });
-
-                text.addEventListener('mouseleave', function () {
-                    textHover = false;
-                    hide();
-                });
-
-                svgStageItem.addEventListener('click', function () {
-                   if (hover || mediaQuery) window.open(href);
-                });
-
-                svgStageItem.addEventListener('mouseenter', function () {
-                    intervals.stopAll();
-                    clearTimeout(thisTimeout);
-                });
-
-                svgStageItem.addEventListener('mouseleave', function () {
-                    intervals.startAll();
-                });
-
-                function show () {
-                    hover = true;
-                    path.classList.add('hover');
-                    path.style.fill = pathColor;
-
-                    if (!mediaQuery) {
-                        text.style.display = 'block';
-                        text.classList.add('hover');
                     }
+
+                    var hideTimeout = null;
+                    function hide () {
+                        hover = false;
+                        path.classList.remove('hover');
+                        path.style.fill = 'transparent';
+
+                        if (!mediaQuery && text) {
+                            text.classList.remove('hover');
+                            clearTimeout(hideTimeout);
+                            hideTimeout = setTimeout(function () {
+                                if (!hover) text.style.display = 'none';
+                            }, 300)
+                        }
+                    }
+
+
+                    var thisInterval = null;
+                    var thisTimeout = null;
+                    var interval = {
+                        start: function () {
+                            thisInterval = setTimeout(function () {
+                                thisInterval = setInterval(function () {
+                                    show();
+
+                                    thisTimeout = setTimeout(hide, deltaAnimationMobile);
+                                }, intervalAnimationMobile)
+                            }, svgStageItemIndex * deltaAnimationMobile);
+                        },
+                        stop: function () {
+                            clearInterval(thisInterval);
+                            clearTimeout(thisInterval);
+                        }
+                    };
+
+                    intervals.push(interval);
+                } catch (e) {
+                    console.error(e);
                 }
-
-                var hideTimeout = null;
-                function hide () {
-                    hover = false;
-                    path.classList.remove('hover');
-                    path.style.fill = 'transparent';
-
-                    if (!mediaQuery) {
-                        text.classList.remove('hover');
-                        clearTimeout(hideTimeout);
-                        hideTimeout = setTimeout(function () {
-                            if (!hover) text.style.display = 'none';
-                        }, 300)
-                    }
-                }
-
-
-                var thisInterval = null;
-                var thisTimeout = null;
-                var interval = {
-                    start: function () {
-                        thisInterval = setTimeout(function () {
-                            thisInterval = setInterval(function () {
-                                show();
-
-                                thisTimeout = setTimeout(hide, deltaAnimationMobile);
-                            }, intervalAnimationMobile)
-                        }, svgStageItemIndex * deltaAnimationMobile);
-                    },
-                    stop: function () {
-                        clearInterval(thisInterval);
-                        clearTimeout(thisInterval);
-                    }
-                };
-
-                intervals.push(interval);
             });
 
             intervals.startAll();

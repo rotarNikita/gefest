@@ -11,4 +11,8 @@
     <g class="single-object_choose_svg_group" data-href="/section.html">
         <path class="single-object_choose_svg_path" d="M256.265625 185.9253996447602 L256.265625 330.70337477797517 L504.904296875 306.31971580817054 L643.71484375 327.6554174067495 L648.291015625 176.78152753108347 L504.904296875 121.91829484902308 Z" fill="rgba(0,255,28,0.4)" /><g class="single-object_choose_svg_description"><path d="M168.470703125 226.9030595652065 L268.470703125 226.9030595652065 L268.470703125 246.88454706927178 L275.470703125 253.8780676956946 L268.470703125 260.8715883221174 L268.470703125 280.85307582618265 L168.47070312500003 280.85307582618265 Z" /><text transform="translate(178.470703125 246.88454706927178)" x="0" y="0"><tspan class="stage" x="0">Секция 2</tspan><tspan x="0" dy="1.2em">планировки</tspan><tspan x="0" dy="1.2em">типового этажа</tspan></text></g>
     </g>
+
+    <g class="single-object_choose_svg_group" data-href="/section.html">
+        <path class="single-object_choose_svg_path" d="M78 205 L247 205 L247 47 L78 47 Z" fill="rgba(255,255,255,0.4)" /><g class="single-object_choose_svg_description"><path d="M44 39 L174 39 L174 59 L181 66 L174 73 L174 93 L44 93 Z" /><text transform="translate(54 59)" x="0" y="0"><tspan class="stage" x="0">вфывфывфывфы</tspan><tspan x="0" dy="1.2em">планировки</tspan><tspan x="0" dy="1.2em">типового этажа</tspan></text></g>
+    </g>
 </svg>

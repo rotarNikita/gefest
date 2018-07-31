@@ -60,7 +60,7 @@
 
                     if (openedSelect && openedSelect !== this) openedSelect.classList.remove('active');
 
-                    this.classList.toggle('active');
+                    if (!this.classList.contains('disabled')) this.classList.toggle('active');
                 });
 
                 document.body.addEventListener('click', function () {
