@@ -128,7 +128,7 @@
             var svgStageItems = document.querySelectorAll('.single-object_choose_svg_group'),
                 mediaQuery = false,
                 intervalAnimationMobile = 4000,
-                deltaAnimationMobile = intervalAnimationMobile / svgStageItems.length,
+                deltaAnimationMobile = intervalAnimationMobile,
                 intervals = [];
 
             intervals.stopAll = function () {
@@ -227,12 +227,11 @@
                     var interval = {
                         start: function () {
                             thisInterval = setTimeout(function () {
-                                thisInterval = setInterval(function () {
-                                    show();
+                                console.log(svgStageItemIndex)
+                                show();
 
-                                    thisTimeout = setTimeout(hide, deltaAnimationMobile);
-                                }, intervalAnimationMobile)
-                            }, svgStageItemIndex * deltaAnimationMobile);
+                                thisTimeout = setTimeout(hide, deltaAnimationMobile);
+                            }, svgStageItemIndex * deltaAnimationMobile + 1000);
                         },
                         stop: function () {
                             clearInterval(thisInterval);
